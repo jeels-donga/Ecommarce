@@ -1,40 +1,61 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Button, Col, Container, Row } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Button, Col, Container, Nav, NavDropdown, Navbar, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-function Home() {
-    const { limit } = useParams();
+function Product() {
     const [product, setProduct] = useState([]);
     const [offset, setOffset] = useState(0)
     const [currentPage, setCurrentPage] = useState(1);
-    const [totalData, setTotalData] = useState(limit);
-    // const [refresh, setRefresh] = useState(false);
+    const [totalData, setTotalData] = useState(12);
+    const [refresh, setRefresh] = useState(false);
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(`https://api.escuelajs.co/api/v1/products?offset=${offset}&limit=${totalData}`);
                 setProduct(response.data);
-                // setRefresh(product);
+                setRefresh(product);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         };
         fetchData();
-    }, [offset, totalData]);
+    }, [refresh, offset]);
+    // console.log(start);
 
     const ChangeNextPage = (newpage) => {
         setCurrentPage(newpage)
-        setOffset(offset + 12)
-        // setRefresh((prevRefresh) => !prevRefresh);
+        setOffset(offset + totalData)
+        setRefresh((prevRefresh) => !prevRefresh);
     }
     const ChangePreviousPage = (newpage) => {
         setCurrentPage(newpage)
-        setOffset(offset - 12)
-        // setRefresh((prevRefresh) => !prevRefresh);
+        setOffset(offset - totalData)
+        setRefresh((prevRefresh) => !prevRefresh);
+    }
+    const handleChange = (e) => {
+        setTotalData(e)
+        setRefresh((prevRefresh) => !prevRefresh);
     }
     return (
-        <>
+        <> <Navbar expand="lg" className="bg-body-tertiary">
+            <Container>
+                <Navbar.Brand href="/">LOGO</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link as={Link} to={"/"}>Home</Nav.Link>
+                        <Nav.Link href="#link">Link</Nav.Link>
+                        <NavDropdown title="Page Items" id="basic-nav-dropdown">
+                            <NavDropdown.Item onClick={() => handleChange(8)}>8</NavDropdown.Item>
+                            <NavDropdown.Item onClick={() => handleChange(12)}>12</NavDropdown.Item>
+                            <NavDropdown.Item onClick={() => handleChange(18)} >18</NavDropdown.Item>
+                            <NavDropdown.Item onClick={() => handleChange(24)}>24</NavDropdown.Item>
+                        </NavDropdown>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar >
             <Container>
                 <h1>Products</h1>
                 <Row>
@@ -61,4 +82,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Product
