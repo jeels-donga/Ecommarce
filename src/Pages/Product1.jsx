@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Nav, NavDropdown, Navbar, Row } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Product() {
     const [product, setProduct] = useState([]);
@@ -9,11 +9,10 @@ function Product() {
     const [currentPage, setCurrentPage] = useState(1);
     const [totalData, setTotalData] = useState(12);
     const [refresh, setRefresh] = useState(false);
-    const { page } = useParams();
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`https://api.escuelajs.co/api/v1/products?offset=${(page || currentPage) || offset}&limit=${totalData}`);
+                const response = await axios.get(`https://api.escuelajs.co/api/v1/products?offset=${offset}&limit=${totalData}`);
                 setProduct(response.data);
                 setRefresh(product);
             } catch (error) {
@@ -21,18 +20,23 @@ function Product() {
             }
         };
         fetchData();
-    }, [refresh, offset, currentPage]);
-    // console.log(currentPage);
-    const ChangePage = (newpage) => {
-        console.log(newpage);
-        window.history.pushState(null, null, `/${newpage}`);
+    }, [refresh, offset]);
+    // console.log(start);
+
+    const ChangeNextPage = (newpage) => {
         setCurrentPage(newpage)
+        setOffset(offset + totalData)
+        setRefresh((prevRefresh) => !prevRefresh);
+    }
+    const ChangePreviousPage = (newpage) => {
+        setCurrentPage(newpage)
+        setOffset(offset - totalData)
+        setRefresh((prevRefresh) => !prevRefresh);
     }
     const handleChange = (e) => {
         setTotalData(e)
         setRefresh((prevRefresh) => !prevRefresh);
     }
-
     return (
         <> <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
@@ -69,10 +73,10 @@ function Product() {
                             )
                         })}
                 </Row>
-                <Button onClick={() => ChangePage(currentPage - 1, setOffset(offset - totalData))} disabled={currentPage === 1}>Previouspage</Button>
-                {page || currentPage}
+                <Button onClick={() => ChangePreviousPage(currentPage - 1)} disabled={currentPage === 1}>Previouspage</Button>
+                {currentPage}
                 {/* <Button onClick={() => setOffset(offset + 12)}>nextpage</Button> */}
-                <Button onClick={() => ChangePage(currentPage + 1, setOffset(offset + totalData))}>nextpage</Button>
+                <Button onClick={() => ChangeNextPage(currentPage + 1)}>nextpage</Button>
             </Container>
         </>
     )
