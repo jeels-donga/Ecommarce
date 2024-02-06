@@ -9,17 +9,8 @@ function Product1() {
     const [currentPage, setCurrentPage] = useState(1);
     let { page } = useParams();
 
-    if (!isNaN(page)) {
-        page = Number(page);
-    } else {
-        page = 1;
-    }
-
-    if (page !== 1 && currentPage !== page) {
-        setCurrentPage(page)
-    }
-
     useEffect(() => {
+        console.log(currentPage, limit);
         const fetchData = async () => {
             try {
                 const response = await axios.get(`https://api.escuelajs.co/api/v1/products?offset=${currentPage * limit}&limit=${limit}`);
@@ -28,9 +19,27 @@ function Product1() {
                 console.error('Error fetching data:', error);
             }
         };
-        fetchData();
 
-    }, [currentPage]);
+        fetchData();
+    }, [currentPage, limit]);
+
+    useEffect(() => {
+
+        if (!isNaN(page)) {
+            page = Number(page);
+        } else {
+            page = 1;
+        }
+
+        if (page !== 1 && currentPage !== page) {
+            setCurrentPage(page)
+        }
+
+        const storedData = localStorage.getItem('products');
+        if (storedData) {
+            setLimit(JSON.parse(storedData));
+        }
+    }, []);
 
     const ChangeNextPage = (page) => {
         window.history.pushState(null, null, `${page + 1}`);
@@ -42,9 +51,12 @@ function Product1() {
 
     }
 
-
     const handleChange = (e) => {
+        console.log(e);
+        localStorage.setItem('products', JSON.stringify(e));
+        window.history.pushState(null, null, `${1}`);
         setLimit(e)
+        setCurrentPage(1);
     }
     return (
         <> <Navbar expand="lg" className="bg-body-tertiary">
