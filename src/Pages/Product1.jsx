@@ -14,40 +14,35 @@ function Product1() {
     } else {
         page = 1;
     }
-
-    if (page !== 1 && currentPage !== page) {
-        setCurrentPage(page)
-    }
-
     useEffect(() => {
 
         const fetchData = async () => {
             try {
                 const response = await axios.get(`https://api.escuelajs.co/api/v1/products?offset=${currentPage * limit}&limit=${limit}`);
                 setProduct(response.data);
-                localStorage.setItem('products', JSON.stringify(response.data));
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
-        };
-        const storedData = localStorage.getItem('products');
-        if (storedData) {
-            setProduct(JSON.parse(storedData));
-        } else {
-            fetchData();
         }
+        // const storedData = localStorage.getItem('products');
+
+        // if (storedData) {
+        // setProduct(JSON.parse(storedData));
+        // } else {
+        fetchData();
+        // }
     }, [currentPage]);
 
     const ChangeNextPage = (page) => {
         window.history.pushState(null, null, `${page + 1}`);
         setCurrentPage(page + 1);
+        localStorage.setItem('products', JSON.stringify(page + 1));
     }
     const ChangePreviousPage = (page) => {
         window.history.pushState(null, null, `${page - 1}`);
         setCurrentPage(page - 1);
-
+        localStorage.setItem('products', JSON.stringify(page - 1));
     }
-
 
     const handleChange = (e) => {
         setLimit(e)
