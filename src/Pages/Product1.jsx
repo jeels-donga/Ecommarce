@@ -20,20 +20,20 @@ function Product1() {
     }
 
     useEffect(() => {
-        const storedData = localStorage.getItem('data');
+
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`https://api.escuelajs.co/api/v1/products?offset=${currentPage * limit}&limit=${limit}`);
+                setProduct(response.data);
+                localStorage.setItem('products', JSON.stringify(response.data));
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+        const storedData = localStorage.getItem('products');
         if (storedData) {
-            // If data is available, parse it and set the state
             setProduct(JSON.parse(storedData));
         } else {
-            const fetchData = async () => {
-                try {
-                    const response = await axios.get(`https://api.escuelajs.co/api/v1/products?offset=${currentPage * limit}&limit=${limit}`);
-                    setProduct(response.data);
-                    localStorage.setItem('platzifakestoreData', JSON.stringify(product));
-                } catch (error) {
-                    console.error('Error fetching data:', error);
-                }
-            };
             fetchData();
         }
     }, [currentPage]);
