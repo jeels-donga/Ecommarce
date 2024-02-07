@@ -1,0 +1,16 @@
+.product-div {
+    background: #d3cacabd;
+    border-radius: 25px;
+
+}
+
+.product-div1 {
+    background: #d3cacabd;
+    border-radius: 25px 25px 0px 0px;
+
+}
+
+.Link {
+    text-decoration: none;
+    color: black;
+}
