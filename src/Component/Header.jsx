@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { FaShoppingCart } from "react-icons/fa";
 function Header(props) {
     const sendDataToParent = (limit) => {
         props.sendData(limit);
@@ -22,9 +23,12 @@ function Header(props) {
                                 <NavDropdown.Item onClick={() => sendDataToParent(24)}>24</NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
+                        {/* how to tranfer if from the product1 */}
+                        <Link to={'/Cart/CartList/:product?'}> <FaShoppingCart /></Link>
                     </Navbar.Collapse>
                 </Container>
             </Navbar >
+
 
         </>
     )

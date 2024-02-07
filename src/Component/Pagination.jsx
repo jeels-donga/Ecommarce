@@ -1,12 +1,12 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
+import '../Component/Pagination.css'
 function Pagination(props) {
 
     return (
         <div className='m-2'>
-            <Button onClick={() => props.PreviousPage(props.Page)} disabled={props.Page === 1}>{"<-"}</Button>
+            <button onClick={() => props.PreviousPage(props.Page)} disabled={props.Page === 1} className='btn1 m-1'>{"<-"}</button>
             {props.Page}
-            <Button onClick={() => props.NextPage(props.Page)} disabled={props.Page === ""}>{"->"}</Button>
+            <button onClick={() => props.NextPage(props.Page)} disabled={props.Page === ""} className='btn1 m-1'>{"->"}</button>
         </div>
     )
 }
