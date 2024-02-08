@@ -24,7 +24,7 @@ function Header(props) {
                             </NavDropdown>
                         </Nav>
                         {/* how to tranfer if from the product1 */}
-                        <Link to={'/Cart/CartList/:product?'}> <FaShoppingCart /></Link>
+                        <Link to={'/SingleProduct/CartList'}> <FaShoppingCart /></Link>
                     </Navbar.Collapse>
                 </Container>
             </Navbar >

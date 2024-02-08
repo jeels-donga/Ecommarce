@@ -1,7 +1,8 @@
 .product-div {
     background: #d3cacabd;
     border-radius: 25px;
-
+    width: 100%;
+    height: 427px;
 }
 
 .product-div1 {

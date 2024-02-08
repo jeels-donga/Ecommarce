@@ -1,23 +1,18 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
 // import Product from './Pages/Product';
-import Product1 from './Pages/Product1';
+import ProductList from './Pages/ProductList';
 import React, { useState } from 'react';
-import Context from './Component/Context';
-import Cart from './Pages/Cart';
+import SingleProduct from './Pages/SingleProduct';
 import CartlistPage from './Pages/CartlistPage';
 function App() {
-  const [data, setData] = useState(true);
+  const [data, setData] = useState(null);
   return (
-    <Context.Provider value={{ data, setData }}>
-      <Routes>
-        {/* <Product1 /> */}
-        <Route path='/:page?' element={<Product1 />} />
-        <Route path='/Cart/:id' element={<Cart />} />
-        <Route path='/Cart/CartList/:product?' element={<CartlistPage />} />
-        {/* <Route path='/:page?' element={<Product />} /> */}
-      </Routes >
-    </Context.Provider>
+    <Routes>
+      <Route path='/:page?' element={<ProductList />} />
+      <Route path='/Product/:id' element={<SingleProduct />} />
+      <Route path='/SingleProduct/CartList' element={<CartlistPage />} />
+    </Routes >
   );
 }
 export default App;
