@@ -1,16 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import Pagination from '../Component/Pagination'
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../Component/Header';
 import '../Style/ProductList.css'
-// import SingleProduct from './SingleProduct';
 function Product1() {
     const [product, setProduct] = useState([]);
     const [limit, setLimit] = useState(12);
     const [currentPage, setCurrentPage] = useState(1);
-    const [receivedData, setReceivedData] = useState('');
     let { page } = useParams();
 
     useEffect(() => {
@@ -22,6 +20,10 @@ function Product1() {
                 console.error('Error fetching data:', error);
             }
         };
+        const storedData = localStorage.getItem('limit');
+        if (storedData) {
+            setLimit(JSON.parse(storedData));
+        }
 
         fetchData();
     }, [currentPage, limit]);
@@ -38,10 +40,12 @@ function Product1() {
             setCurrentPage(page)
         }
 
-        const storedData = localStorage.getItem('limit');
-        if (storedData) {
-            setLimit(JSON.parse(storedData));
-        }
+        // const storedData = localStorage.getItem('limit');
+        // if (storedData) {
+        //     // console.log(storedData);
+        //     setLimit(JSON.parse(storedData));
+        //     console.log(limit);
+        // }
     }, []);
 
     const ChangeNextPage = (page) => {
@@ -52,21 +56,33 @@ function Product1() {
         window.history.pushState(null, null, `${page - 1}`);
         setCurrentPage(page - 1);
     }
-    const receiveDataFromChild = (limit) => {
-        setReceivedData(limit);
-        localStorage.setItem('limit', JSON.stringify(limit));
+    const receiveDataFromChild = (e) => {
+        localStorage.setItem('limit', JSON.stringify(e.target.value));
         window.history.pushState(null, null, `${1}`);
-        setLimit(limit)
+        setLimit(e.target.value)
         setCurrentPage(1);
     };
 
     // console.log(data);
     return (
         <div>
-            <Header sendData={receiveDataFromChild} />
+            <Header />
             <Container>
-                <h1 className='text-center'>Products</h1>
-                <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
+                <Row>
+
+                    <Col><Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} /></Col>
+                    <Col><h1 className='text-center'>Products</h1></Col>
+                    <Col>
+                        <div className='d-flex justify-content-end mt-3'>
+                            <select id="cars" onChange={receiveDataFromChild}>
+                                <option value="12" >12</option>
+                                <option value="8">8</option>
+                                <option value="18" >18</option>
+                                <option value="24" >24</option>
+                            </select>
+                        </div>
+                    </Col>
+                </Row>
                 <Row>
                     {
                         product.map((e, i) => {

@@ -2,47 +2,32 @@ import React, { useEffect, useState } from 'react'
 import Header from '../Component/Header'
 import '../Style/CartlistPage.css'
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import CartCount from '../Component/CartCount';
 
 function CartlistPage() {
-    // how to cart deatils in cartlist
-    // how to see cartlist from header
-    // how to set every cart in Array
     const [data, setData] = useState([]);
-    const [list, setList] = useState([]);
-    const [count, setCount] = useState(1);
-    const [index, setIndex] = useState()
+    const [dataFromChild, setDataFromChild] = useState(0);
+    const [NewPrice, setNewPrice] = useState(0);
+    const [ButtonId, setButtonId] = useState(0);
     useEffect(() => {
-
         const DataAdd = localStorage.getItem('Cart');
         if (DataAdd) {
             setData(JSON.parse(DataAdd));
         }
-        const DataDelete = localStorage.getItem('delete');
-        if (DataDelete) {
-            setData(JSON.parse(DataDelete));
-        }
+
     }, []);
 
-    const UpdateData = (id) => {
-        setList(data[id])
-        setIndex(id)
-        const newData = { ...list };
-        newData.count = count;
-        setList(newData);
-        let prearr = [...data];
-        prearr.splice(index, 1)
-        console.log(list);
-        setData(prearr)
-    }
-    console.log(data);
     const DataDelete = (i) => {
         let prearr = [...data];
         prearr.splice(i, 1)
         setData(prearr)
-        localStorage.setItem('delete', JSON.stringify(prearr));
+        localStorage.setItem('Cart', JSON.stringify(prearr));
     }
-
-
+    const handleDataFromChild = (count, id) => {
+        setButtonId(id);
+        setDataFromChild(count);
+        setNewPrice(count * data[id].price);
+    };
     return (
         <div>
             <Header />
@@ -54,7 +39,7 @@ function CartlistPage() {
                                 <div className='border mt-3' key={i}>
                                     <Row className='p-2' >
                                         <Col className='d-flex justify-content-center align-items-center align-self-center '>
-                                            <img src={e.images} alt="" className='img1 ' />
+                                            <img src={e.images} alt="" className='img1' />
                                         </Col>
                                         <Col className='d-flex justify-content-center align-items-center align-self-center '>
                                             <h6 className='text-center'>{e.title}</h6>
@@ -64,15 +49,11 @@ function CartlistPage() {
                                         </Col>
                                         <Col className='d-flex justify-content-center align-items-center align-self-center '>
                                             <p className='text-center'>total-items</p>
-                                            <div className='d-flex justify-content-center'>
-                                                <Button className='m-1' onClick={() => UpdateData(i)}>-</Button>
-                                                <p className='text-center m-2'>{count}</p>
-                                                <Button className='m-1' onClick={() => UpdateData(i)}>+</Button>
-                                            </div>
+                                            <CartCount sendDataToParent={handleDataFromChild} id={i} />
                                         </Col>
                                         <Col className='d-flex justify-content-center align-items-center align-self-center '>
                                             <p className='text-center'>total price</p>
-                                            <p className='text-center'>{e.price}</p>
+                                            <p className='text-center'>{ButtonId === i && NewPrice !== 0 ? NewPrice : e.price}</p>
                                         </Col>
                                         <Col className='d-flex justify-content-center align-items-center align-self-center '>
                                             <Button>Submit</Button>
