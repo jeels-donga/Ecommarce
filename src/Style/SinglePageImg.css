@@ -1,0 +1,15 @@
+.products-Sub-img {
+    width: 60px;
+}
+
+.clicked {
+    border: 3px solid blue;
+}
+
+/* .default {
+    border: 3px solid blue;
+} */
+
+.products-img {
+    width: 70%;
+}

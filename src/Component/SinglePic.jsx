@@ -1,21 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
-function SinglePic(props, sendDataToParent) {
-    const [clicked, setClicked] = useState(false);
-
-
+function SinglePic(props) {
     const sendData = (id) => {
-        props.sendDataToParent(id);
-        setClicked(true);
-    };
+        props.SetParentData(id);
 
+    };
     return (
         <>
             <div key={props.id}>
-                <img src={props.images} alt="" onClick={() => { sendData(props.id) }} className={`products-img1 m-1 ${clicked ? 'images' : ''}`} />
+                <img src={props.images} alt="" onClick={() => { sendData(props.id) }} className={`products-Sub-img m-1 currentimg ${props.style}`} />
             </div >
         </>
-
     )
 }
 
