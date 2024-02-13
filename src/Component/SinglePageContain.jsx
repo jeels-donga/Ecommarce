@@ -11,17 +11,19 @@ function SinglePageContain(props) {
     }
     return (
         <Col>
-            <h1>{props.data.title}</h1>
-            <p> <b>price:-</b> {props.data.price}</p>
-            <p><b>description</b> {props.data.description}</p>
-            <p><b>rating</b> {props.data.rating}</p>
-            <p><b>brand</b> {props.data.brand}</p>
-            <p><b>category</b> {props.data.category}</p>
-            <div className='container1'>
-                {/* how to store cart page details to cartlist component */}
-                <Button onClick={() => SetData(props.data)}>Add to Cart</Button>
-                <div className={showSign ? "sign animate" : "sign"}>&#10004;</div>
+            <div>
+                <h1>{props.data.title}</h1>
+                <p> <b>Price:-</b> {props.data.price}</p>
+                <p><b>Description</b> {props.data.description}</p>
+                <p><b>Rating</b> {props.data.rating}</p>
+                <p><b>Brand</b> {props.data.brand}</p>
+                <p><b>Category</b> {props.data.category}</p>
+                <div className='container1'>
+                    <Button onClick={() => SetData(props.data)}>Add to Cart</Button>
+                    <div className={showSign ? "sign animate" : "sign"}>&#10004;</div>
+                </div>
             </div>
+
         </Col>
     )
 }

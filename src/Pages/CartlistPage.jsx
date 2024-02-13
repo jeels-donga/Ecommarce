@@ -56,7 +56,7 @@ function CartlistPage() {
                                             <p className='text-center'>{ButtonId === i && NewPrice !== 0 ? NewPrice : e.price}</p>
                                         </Col>
                                         <Col className='d-flex justify-content-center align-items-center align-self-center '>
-                                            <Button>Submit</Button>
+                                            {/* <Button>Submit</Button> */}
                                         </Col>
                                         <Col className='d-flex justify-content-center align-items-center align-self-center '>
                                             <Button onClick={() => DataDelete(i)}>Delete</Button>

@@ -14,7 +14,7 @@ function Product1() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`https://dummyjson.com/products?limit=${limit}`);
+                const response = await axios.get(`https://dummyjson.com/products?limit=${limit}&skip=${(currentPage - 1) * limit}`);
                 setProduct(response.data.products);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -49,7 +49,7 @@ function Product1() {
     }, []);
 
     const ChangeNextPage = (page) => {
-        window.history.pushState(null, null, `${page + 1}`);
+        window.history.pushState(null, null, `${page + 1} `);
         setCurrentPage(page + 1);
     }
     const ChangePreviousPage = (page) => {
@@ -86,19 +86,21 @@ function Product1() {
                         product.map((e, i) => {
                             return (
                                 <Col md={3} key={i}>
-                                    <div className="card product-div m-2"  >
-                                        <img src={e.images[1]} className="card-img-top product-div1" alt="..." />
-                                        <div className="card-body row justify-content-evenly">
-                                            <div className='d-flex align-items-end'>
-                                                <h6 className="card-title">{e.title}</h6>
+                                    <div className="card product-div m-2" as={Link} to={`/Product/${e.id} `}  >
+                                        <Link to={`/Product/${e.id} `}>
+                                            <img src={e.images[0]} className="card-img-top product-div1" alt="..." />
+                                            <div className="card-body row justify-content-evenly">
+                                                <div className='d-flex align-items-end'>
+                                                    <h6 className="card-title">{e.title}</h6>
+                                                </div>
+                                                <div className='d-flex align-items-end'>
+                                                    <p className="card-text">Price:-{e.price}</p>
+                                                </div>
+                                                <div className='d-flex align-items-end'>
+                                                    <Button className='productlist-btn'><Link to={`/Product/${e.id} `} className='Link'>More</Link></Button>
+                                                </div>
                                             </div>
-                                            <div className='d-flex align-items-end'>
-                                                <p className="card-text">Price:-{e.price}</p>
-                                            </div>
-                                            <div className='d-flex align-items-end'>
-                                                <Button className='productlist-btn'><Link to={`/Product/${e.id} `} className='Link'>More</Link></Button>
-                                            </div>
-                                        </div>
+                                        </Link>
                                     </div>
                                 </Col>
                             )
