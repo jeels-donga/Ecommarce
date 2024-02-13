@@ -8,10 +8,17 @@
 .product-div1 {
     background: #d3cacabd;
     border-radius: 25px 25px 0px 0px;
-
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
 }
 
 .Link {
     text-decoration: none;
     color: black;
+}
+
+.productlist-btn {
+    width: 100%;
+    height: 40px;
 }

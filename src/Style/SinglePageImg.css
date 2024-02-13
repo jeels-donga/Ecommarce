@@ -12,4 +12,6 @@
 
 .products-img {
     width: 70%;
+    height: 293px;
+    object-fit: cover;
 }

@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 function SinglePic(props) {
     const sendData = (id) => {
         props.SetParentData(id);
+        console.log(id);
 
     };
     return (

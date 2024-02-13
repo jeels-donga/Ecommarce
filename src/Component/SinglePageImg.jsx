@@ -5,8 +5,7 @@ import SinglePic from './SinglePic';
 
 function SinglePageImg(props) {
     const SetChildData = (id) => {
-        props.SetSubCurrentImg(id);
-        console.log(props.subCurrentImg);
+        props.setSubCurrentImg(id);
     }
     return (
         <Col>

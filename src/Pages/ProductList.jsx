@@ -14,8 +14,8 @@ function Product1() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`https://api.escuelajs.co/api/v1/products?offset=${currentPage * limit}&limit=${limit}`);
-                setProduct(response.data);
+                const response = await axios.get(`https://dummyjson.com/products?limit=${limit}`);
+                setProduct(response.data.products);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -53,17 +53,15 @@ function Product1() {
         setCurrentPage(page + 1);
     }
     const ChangePreviousPage = (page) => {
-        window.history.pushState(null, null, `${page - 1}`);
+        window.history.pushState(null, null, `${page - 1} `);
         setCurrentPage(page - 1);
     }
     const receiveDataFromChild = (e) => {
         localStorage.setItem('limit', JSON.stringify(e.target.value));
-        window.history.pushState(null, null, `${1}`);
+        window.history.pushState(null, null, `${1} `);
         setLimit(e.target.value)
         setCurrentPage(1);
     };
-
-    // console.log(data);
     return (
         <div>
             <Header />
@@ -89,12 +87,17 @@ function Product1() {
                             return (
                                 <Col md={3} key={i}>
                                     <div className="card product-div m-2"  >
-                                        <img src={e.images} className="card-img-top product-div1" alt="..." />
+                                        <img src={e.images[1]} className="card-img-top product-div1" alt="..." />
                                         <div className="card-body row justify-content-evenly">
-                                            <h6 className="card-title">{e.title}</h6>
-                                            <p className="card-text">Price:-{e.price}</p>
-                                            {/* <a className="btn btn-primary" as={Link} to={`/Product/${e.id}`}  >More</a> */}
-                                            <Button ><Link to={`/Product/${e.id}`} className='Link'>More</Link></Button>
+                                            <div className='d-flex align-items-end'>
+                                                <h6 className="card-title">{e.title}</h6>
+                                            </div>
+                                            <div className='d-flex align-items-end'>
+                                                <p className="card-text">Price:-{e.price}</p>
+                                            </div>
+                                            <div className='d-flex align-items-end'>
+                                                <Button className='productlist-btn'><Link to={`/Product/${e.id} `} className='Link'>More</Link></Button>
+                                            </div>
                                         </div>
                                     </div>
                                 </Col>
@@ -103,8 +106,6 @@ function Product1() {
                     }
                 </Row>
                 <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
-
-
             </Container >
         </div >
     )

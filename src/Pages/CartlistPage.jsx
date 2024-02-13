@@ -39,7 +39,7 @@ function CartlistPage() {
                                 <div className='border mt-3' key={i}>
                                     <Row className='p-2' >
                                         <Col className='d-flex justify-content-center align-items-center align-self-center '>
-                                            <img src={e.images} alt="" className='img1' />
+                                            <img src={e.images[1]} alt="" className='img1' />
                                         </Col>
                                         <Col className='d-flex justify-content-center align-items-center align-self-center '>
                                             <h6 className='text-center'>{e.title}</h6>

@@ -14,6 +14,9 @@ function SinglePageContain(props) {
             <h1>{props.data.title}</h1>
             <p> <b>price:-</b> {props.data.price}</p>
             <p><b>description</b> {props.data.description}</p>
+            <p><b>rating</b> {props.data.rating}</p>
+            <p><b>brand</b> {props.data.brand}</p>
+            <p><b>category</b> {props.data.category}</p>
             <div className='container1'>
                 {/* how to store cart page details to cartlist component */}
                 <Button onClick={() => SetData(props.data)}>Add to Cart</Button>
