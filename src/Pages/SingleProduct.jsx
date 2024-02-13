@@ -3,6 +3,7 @@ import Header from '../Component/Header'
 import { Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import Loading from '../Component/Loading';
+import '../Style/SinglePageImg.css'
 import axios from 'axios';
 import SinglePageContain from '../Component/SinglePageContain';
 import SinglePageImg from '../Component/SinglePageImg';

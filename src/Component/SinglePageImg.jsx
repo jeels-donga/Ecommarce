@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Col } from 'react-bootstrap'
 import '../Style/SinglePageImg.css'
 import SinglePic from './SinglePic';
@@ -7,14 +7,17 @@ function SinglePageImg(props) {
     const SetChildData = (id) => {
         props.setSubCurrentImg(id);
     }
+    console.log(props.data.images);
     return (
         <Col>
             <div className='d-flex'>
                 <div className='me-3 mt-3'>
                     {props.data.images.map((e, i) => {
+                        console.log(props.subCurrentImg);
+                        console.log(i);
                         return (
                             <div key={i}>
-                                <SinglePic images={e} id={i} SetParentData={SetChildData} />
+                                <SinglePic images={e} id={i} SetParentData={SetChildData} isBorder={props.subCurrentImg === i ? true : false} />
                             </div>
                         )
                     })}
