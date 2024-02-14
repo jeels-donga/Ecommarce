@@ -1,6 +1,7 @@
 .Home-S2 {
     display: flex;
     align-items: center;
+    margin: 0px 70px 0px 70px;
 }
 
 .Sub-Home-S2 {
@@ -8,8 +9,7 @@
 }
 
 .pagination {
-    position: relative;
-    left: 70px;
+    margin: 11px 0px 0px 70px;
 }
 
 .Head {
@@ -20,8 +20,6 @@
 .limit {
     display: flex;
     justify-content: end;
-    position: relative;
-    right: 70px;
 }
 
 .product {

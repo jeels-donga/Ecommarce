@@ -68,7 +68,7 @@ function Product1() {
             <div>
                 <div className='Home-S2'>
                     <div className='Sub-Home-S2'>
-                        <div className='pagination'>
+                        <div>
                             <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
                         </div>
                     </div>
@@ -114,9 +114,9 @@ function Product1() {
                     })
                 }
             </div>
-            {/* <div className='pagination'>
+            <div className='pagination'>
                 <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
-            </div> */}
+            </div>
         </div >
     )
 }
