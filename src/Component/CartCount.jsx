@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap'
+import '../Style/CartCount.css'
 
 function CartCount(props) {
     const [count, setCount] = useState(1)
@@ -10,10 +11,10 @@ function CartCount(props) {
 
 
     return (
-        <div className='d-flex justify-content-center' key={props.id}>
-            <Button className='m-1' onClick={() => sendData(count - 1, props.id)} disabled={count === 1}>-</Button>
-            <p className='text-center m-2'>{count}</p>
-            <Button className='m-1' onClick={() => sendData(count + 1, props.id)}>+</Button>
+        <div className='count' key={props.id}>
+            <button className='m' onClick={() => sendData(count - 1, props.id)} disabled={count === 1}>-</button>
+            <p className='m1'>{count}</p>
+            <button className='m' onClick={() => sendData(count + 1, props.id)}>+</button>
         </div >
     )
 }

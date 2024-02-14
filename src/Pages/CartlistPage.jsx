@@ -31,7 +31,56 @@ function CartlistPage() {
     return (
         <div>
             <Header />
-            <Container>
+            <div className='cart-main-div'>
+                {
+                    data.map((e, i) => {
+                        return (
+                            <div>
+                                <div className='container'>
+                                    <div className='div1'>
+                                        <img src={e.images[1]} alt="" className='img1' />
+                                    </div>
+                                    <div className='div1'>
+                                        <h3 className='text-center'>{e.title}</h3>
+                                    </div>
+                                    <div className='div1'>
+                                        <p className='text-center'>price :-{e.price}</p>
+                                    </div>
+                                    <div className='div1'>
+                                        <div>
+                                            <div className='div'>
+                                                <span className='text-center'>total-items</span>
+                                            </div>
+                                            <div >
+                                                <CartCount sendDataToParent={handleDataFromChild} id={i} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='div1'>
+                                        <div>
+                                            <div className='div'>
+                                                <span className='text-center'>total price</span>
+                                            </div>
+                                            <div className='div'>
+                                                <span className='text-center'>{ButtonId === i && NewPrice !== 0 ? NewPrice : e.price}</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div>
+                                        <button className='btn1'>Submit</button>
+                                    </div>
+                                    <div>
+                                        <Button onClick={() => DataDelete(i)} className='btn1'>Delete</Button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        )
+                    })
+                }
+            </div>
+            {/* <Container>
                 <Row>
                     <Col >
                         {data.map((e, i) => {
@@ -57,17 +106,17 @@ function CartlistPage() {
                                         </Col>
                                         <Col className='d-flex justify-content-center align-items-center align-self-center '>
                                             {/* <Button>Submit</Button> */}
-                                        </Col>
-                                        <Col className='d-flex justify-content-center align-items-center align-self-center '>
-                                            <Button onClick={() => DataDelete(i)}>Delete</Button>
-                                        </Col>
-                                    </Row>
-                                </div>
-                            )
-                        })}
-                    </Col>
-                </Row>
-            </Container>
+            {/* </Col> */}
+            {/* <Col className='d-flex justify-content-center align-items-center align-self-center '> */}
+            {/* <Button onClick={() => DataDelete(i)}>Delete</Button> */}
+            {/* </Col> */}
+            {/* </Row > */}
+            {/* </div > */}
+            {/* ) */}
+            {/* })} */}
+            {/* </Col > */}
+            {/* </Row > */}
+            {/* </Container > * /} */}
 
         </div >
     )
