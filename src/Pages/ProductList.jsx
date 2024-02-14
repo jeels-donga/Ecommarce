@@ -114,6 +114,9 @@ function Product1() {
                     })
                 }
             </div>
+            <div className='pagination'>
+                <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
+            </div>
             {/* 
                     {
                         product.map((e, i) => {
