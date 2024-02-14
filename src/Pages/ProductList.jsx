@@ -98,7 +98,10 @@ function Product1() {
 
                             <div className='product-box'>
                                 <Link to={`/Product/${e.id}`} className='link '>
-                                    <img src={e.images[0]} className="card-img-top " alt="..." />
+                                    <div className="card-img-top ">
+                                        <img src={e.images[0]} className="img2" alt="..." />
+                                    </div>
+
                                     <div className='card-text'>
                                         <h3>{e.title}</h3>
                                     </div>

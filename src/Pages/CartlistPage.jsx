@@ -68,9 +68,6 @@ function CartlistPage() {
 
                                     </div>
                                     <div>
-                                        <button className='btn1'>Submit</button>
-                                    </div>
-                                    <div>
                                         <Button onClick={() => DataDelete(i)} className='btn1'>Delete</Button>
                                     </div>
                                 </div>
