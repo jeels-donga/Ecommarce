@@ -7,6 +7,16 @@
 .sign {
     font-size: 2rem;
     opacity: 0;
+    margin: 12px;
+    color: green;
+}
+
+.button {
+    border: none;
+    border-radius: 6px;
+    background: #5f9ea0;
+    width: 100px;
+    padding: 12px;
 }
 
 .animate {

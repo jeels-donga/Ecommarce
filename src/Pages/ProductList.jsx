@@ -114,37 +114,9 @@ function Product1() {
                     })
                 }
             </div>
-            <div className='pagination'>
+            {/* <div className='pagination'>
                 <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
-            </div>
-            {/* 
-                    {
-                        product.map((e, i) => {
-                            return (
-                                <Col md={3} key={i}>
-                                    <div className="card product-div m-2" as={Link} to={`/Product/${e.id} `}  >
-                                        <Link to={`/Product/${e.id} `}>
-                                           
-                                            <div className="card-body row justify-content-evenly">
-                                                <div className='d-flex align-items-end'>
-                                                    <h6 className="card-title">{e.title}</h6>
-                                                </div>
-                                                <div className='d-flex align-items-end'>
-                                                    <p className="card-text">Price:-{e.price}</p>
-                                                </div>
-                                                <div className='d-flex align-items-end'>
-                                                    <Button className='productlist-btn'><Link to={`/Product/${e.id} `} className='Link'>More</Link></Button>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </div>
-                                </Col>
-                            )
-                        })
-                    }
-                </Row>
-                <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
-            </Container > */}
+            </div> */}
         </div >
     )
 }

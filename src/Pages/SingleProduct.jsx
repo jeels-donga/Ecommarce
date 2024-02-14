@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../Component/Header'
-import { Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import Loading from '../Component/Loading';
 import '../Style/SinglePageImg.css'
 import axios from 'axios';
 import SinglePageContain from '../Component/SinglePageContain';
 import SinglePageImg from '../Component/SinglePageImg';
+import '../Style/SingleProduct.css'
 function SingleProduct() {
     const { id } = useParams();
     const [productData, setProductData] = useState(null);
@@ -32,14 +32,17 @@ function SingleProduct() {
     return (
         <div>
             <Header />
-            <Container>
+            {/* <Container>
+              
+            </Container> */}
+            <div className='SinglePage-div'>
                 {productData == null ? <Loading /> :
-                    <Row>
+                    <>
                         <SinglePageImg data={productData} subCurrentImg={subCurrentImg} setSubCurrentImg={setSubCurrentImg} />
                         <SinglePageContain data={productData} ParentData={handleChildData} />
-                    </Row>
+                    </>
                 }
-            </Container>
+            </div>
         </div >
     )
 }

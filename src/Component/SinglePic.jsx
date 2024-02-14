@@ -10,7 +10,7 @@ function SinglePic(props) {
     return (
         <>
             <div key={props.id}>
-                <img src={props.images} alt="" onClick={() => { sendData(props.id) }} className={`products-Sub-img m-1 currentimg ${props.isBorder === true ? "current" : ''}`} />
+                <img src={props.images} alt="" onClick={() => { sendData(props.id) }} className={`products-Sub-img m-1 currentimg ${props.isBorder === true ? "current" : 'current1 '}`} />
             </div >
         </>
     )
