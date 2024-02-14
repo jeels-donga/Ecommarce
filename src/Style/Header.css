@@ -1,0 +1,42 @@
+.Header {
+    display: flex;
+}
+
+.Sub-Header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* logo */
+.logo {
+    position: relative;
+    left: 70px;
+}
+
+/* menu */
+li {
+    list-style: none;
+}
+
+.a1 {
+    text-decoration: none;
+    color: black;
+}
+
+/* Cart */
+.cart {
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: end;
+}
+
+.cart-icon {
+    position: relative;
+    right: 70px;
+    font-size: 24px;
+    background: cadetblue;
+    padding: 14px;
+    border-radius: 50%;
+}
