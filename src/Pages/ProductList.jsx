@@ -65,30 +65,63 @@ function Product1() {
     return (
         <div>
             <Header />
-            <Container>
-                <Row>
-
-                    <Col><Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} /></Col>
-                    <Col><h1 className='text-center'>Products</h1></Col>
-                    <Col>
-                        <div className='d-flex justify-content-end mt-3'>
-                            <select id="cars" onChange={receiveDataFromChild}>
-                                <option value="12" >12</option>
-                                <option value="8">8</option>
-                                <option value="18" >18</option>
-                                <option value="24" >24</option>
-                            </select>
+            <div>
+                <div className='Home-S2'>
+                    <div className='Sub-Home-S2'>
+                        <div className='pagination'>
+                            <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
                         </div>
-                    </Col>
-                </Row>
-                <Row>
+                    </div>
+                    <div className='Sub-Home-S2'>
+                        <div className='Head'>
+                            <h1>Products</h1>
+                        </div>
+                    </div>
+                    <div className='Sub-Home-S2'>
+                        <div className='limit'>
+                            <div className='d-flex justify-content-end mt-3'>
+                                <select id="cars" onChange={receiveDataFromChild}>
+                                    <option value="12" >12</option>
+                                    <option value="8">8</option>
+                                    <option value="18" >18</option>
+                                    <option value="24" >24</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='product'>
+                {
+                    product.map((e, i) => {
+                        return (
+
+                            <div className='product-box'>
+                                <Link to={`/Product/${e.id}`} className='link '>
+                                    <img src={e.images[0]} className="card-img-top " alt="..." />
+                                    <div className='card-text'>
+                                        <h3>{e.title}</h3>
+                                    </div>
+                                    <div className='card-text'>
+                                        <p>Price:-{e.price}</p>
+                                    </div>
+                                    <div className='card-text'>
+                                        <button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link'>More</Link></button>
+                                    </div>
+                                </Link>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+            {/* 
                     {
                         product.map((e, i) => {
                             return (
                                 <Col md={3} key={i}>
                                     <div className="card product-div m-2" as={Link} to={`/Product/${e.id} `}  >
                                         <Link to={`/Product/${e.id} `}>
-                                            <img src={e.images[0]} className="card-img-top product-div1" alt="..." />
+                                           
                                             <div className="card-body row justify-content-evenly">
                                                 <div className='d-flex align-items-end'>
                                                     <h6 className="card-title">{e.title}</h6>
@@ -108,7 +141,7 @@ function Product1() {
                     }
                 </Row>
                 <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
-            </Container >
+            </Container > */}
         </div >
     )
 }
