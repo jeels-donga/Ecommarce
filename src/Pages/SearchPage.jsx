@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Col, Container, Row } from 'react-bootstrap'
-import Pagination from '../Component/Pagination'
 import { Link, useParams } from 'react-router-dom';
-import axios from 'axios';
 import Header from '../Component/Header';
-import '../Style/ProductList.css'
-function Product1() {
+import axios from 'axios';
+import Pagination from '../Component/Pagination';
+
+function SearchPage() {
     const [product, setProduct] = useState([]);
     const [limit, setLimit] = useState(12);
     const [currentPage, setCurrentPage] = useState(1);
-    let { page } = useParams();
-
+    let { search } = useParams();
+    // console.log(search);
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`https://dummyjson.com/products?limit=${limit}&skip=${(currentPage - 1) * limit}`);
+                const response = await axios.get(`https://dummyjson.com/products/search?q=${search}`);
                 setProduct(response.data.products);
+                console.log(response.data.products);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -26,28 +26,19 @@ function Product1() {
         }
 
         fetchData();
-    }, [currentPage, limit]);
+    }, [search, currentPage, limit]);
+    // useEffect(() => {
 
-    useEffect(() => {
+    //     if (!isNaN(page)) {
+    //         page = Number(page);
+    //     } else {
+    //         page = 1;
+    //     }
 
-        if (!isNaN(page)) {
-            page = Number(page);
-        } else {
-            page = 1;
-        }
-
-        if (page !== 1 && currentPage !== page) {
-            setCurrentPage(page)
-        }
-
-        // const storedData = localStorage.getItem('limit');
-        // if (storedData) {
-        //     // console.log(storedData);
-        //     setLimit(JSON.parse(storedData));
-        //     console.log(limit);
-        // }
-    }, []);
-
+    //     if (page !== 1 && currentPage !== page) {
+    //         setCurrentPage(page)
+    //     }
+    // }, []);
     const ChangeNextPage = (page) => {
         window.history.pushState(null, null, `${page + 1} `);
         setCurrentPage(page + 1);
@@ -96,8 +87,8 @@ function Product1() {
                     product.map((e, i) => {
                         return (
 
-                            <div className='product-box' key={i}>
-                                <Link to={`/Product/${e.id}`} className='link '>
+                            <div className='product-box'>
+                                <Link to={`/ Product / ${e.id} `} className='link '>
                                     <div className="card-img-top ">
                                         <img src={e.images[0]} className="img2" alt="..." />
                                     </div>
@@ -109,7 +100,7 @@ function Product1() {
                                         <p>Price:-{e.price}</p>
                                     </div>
                                     <div className='card-text'>
-                                        <button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link'>More</Link></button>
+                                        <button className='productlist-btn'><Link to={`/ Product / ${e.id} `} className='link'>More</Link></button>
                                     </div>
                                 </Link>
                             </div>
@@ -124,4 +115,4 @@ function Product1() {
     )
 }
 
-export default Product1
+export default SearchPage
