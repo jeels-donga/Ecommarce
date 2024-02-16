@@ -1,35 +1,11 @@
 .Header {
-    display: flex;
+    margin: 0% 5% 0% 5%;
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
 
-.Sub-Header {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-/* logo */
-.logo {
-    position: relative;
-    left: 70px;
-}
-
-.btn1 {
-    border: none;
-    border-radius: 6px;
-    background: #5f9ea0;
-    width: 100px;
-    padding: 12px;
-    margin: 10px;
-}
-
-.input {
-    height: 32px;
-}
-
-/* menu */
-li {
-    list-style: none;
+.Header-rs {
+    display: none;
 }
 
 .a1 {
@@ -37,19 +13,53 @@ li {
     color: black;
 }
 
-/* Cart */
-.cart {
+.menu-section {
     display: flex;
-    width: 100%;
-    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+}
+
+.search-section {
+    display: flex;
     justify-content: end;
+    align-items: center;
+}
+
+.input {
+    height: 32px;
 }
 
 .cart-icon {
-    position: relative;
-    right: 70px;
     font-size: 24px;
     background: cadetblue;
     padding: 14px;
     border-radius: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+    .Header {
+        display: none;
+    }
+
+    .Header-rs {
+        margin: 0% 2% 0% 2%;
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .menu1 {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
