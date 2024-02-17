@@ -92,7 +92,7 @@
 
 @media only screen and (max-width: 1024px) {
     .prduct-list {
-        margin: 0% 5% 0% 5%;
+        margin: 5% 5% 0% 5%;
         display: grid;
         grid-template-columns: auto auto auto auto;
     }
@@ -135,7 +135,7 @@
 
 @media only screen and (max-width: 768px) {
     .prduct-list {
-        margin: 0% 5% 0% 5%;
+        margin: 5% 5% 0% 5%;
         display: grid;
         grid-template-columns: auto auto;
     }
@@ -160,7 +160,7 @@
 
 @media only screen and (max-width: 425px) {
     .prduct-list {
-        margin: 0% 5% 0% 5%;
+        margin: 5% 5% 0% 5%;
         display: grid;
         grid-template-columns: auto;
     }
@@ -185,7 +185,7 @@
 
 @media only screen and (max-width: 375px) {
     .prduct-list {
-        margin: 0% 5% 0% 5%;
+        margin: 5% 5% 0% 5%;
         display: grid;
         grid-template-columns: auto;
     }
@@ -210,7 +210,7 @@
 
 @media only screen and (max-width: 320px) {
     .prduct-list {
-        margin: 0% 5% 0% 5%;
+        margin: 5% 5% 0% 5%;
         display: grid;
         grid-template-columns: auto;
     }
