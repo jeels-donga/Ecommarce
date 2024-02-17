@@ -8,24 +8,9 @@ function SinglePageImg(props) {
     }
     console.log(props.data.images);
     return (
-        // <Col>
-        //     <div className='d-flex'>
-        //         <div className='me-3 mt-3'>
-        //             {props.data.images.map((e, i) => {
-        //                 console.log(props.subCurrentImg);
-        //                 console.log(i);
-        //                 return (
-        //                     <div key={i}>
-        //                         <SinglePic images={e} id={i} SetParentData={SetChildData} isBorder={props.subCurrentImg === i ? true : false} />
-        //                     </div>
-        //                 )
-        //             })}
-        //         </div>
-        //         < img src={props.data.images[props.subCurrentImg]} alt="" className='products-img m-3' />
-        //     </div>
-        // </Col>
+        // <div></div>
         <div className='image'>
-            <div>
+            <div className='imges1'>
                 {props.data.images.map((e, i) => {
                     console.log(props.subCurrentImg);
                     console.log(i);
@@ -36,7 +21,7 @@ function SinglePageImg(props) {
                     )
                 })}
             </div>
-            <div>
+            <div className='product-img-box'>
                 < img src={props.data.images[props.subCurrentImg]} alt="" className='products-img m-3' />
             </div>
 

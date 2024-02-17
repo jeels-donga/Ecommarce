@@ -32,9 +32,6 @@ function SingleProduct() {
     return (
         <div>
             <Header />
-            {/* <Container>
-              
-            </Container> */}
             <div className='SinglePage-div'>
                 {productData == null ? <Loading /> :
                     <>
