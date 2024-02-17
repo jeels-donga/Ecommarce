@@ -57,6 +57,7 @@
     align-items: center;
     text-align: center;
     /* width: 16rem; */
+    padding: 4px;
 }
 
 .img2 {
@@ -64,13 +65,13 @@
     height: 12rem;
     object-fit: contain;
     background: white;
-    border: 1px solid;
-    border-radius: 7% 7% 0% 0%;
+    /* border: 1px solid; */
+    border-radius: 12% 12% 0% 0%;
 }
 
 .sub-sec1 {
     background-color: cornsilk;
-    height: 347px;
+    height: 380px;
     margin: 12px;
     border: 1px solid;
     border-radius: 7%;

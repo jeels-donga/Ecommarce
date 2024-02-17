@@ -56,22 +56,18 @@ function SearchPage() {
     return (
         <div>
             <Header />
-            <div>
-                <div className='Home-S2'>
-                    <div className='Sub-Home-S2'>
-                        <div>
-                            <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
-                        </div>
+            <div className='section2'>
+                <div className='sub2'>
+                    <div className='pagi'>
+                        <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
                     </div>
-                    <div className='Sub-Home-S2'>
-                        <div className='Head'>
+                    <div className='sub-section2'>
+                        <div className='title'>
                             <h1>Products</h1>
                         </div>
-                    </div>
-                    <div className='Sub-Home-S2'>
                         <div className='limit'>
-                            <div className='d-flex justify-content-end mt-3'>
-                                <select id="cars" onChange={receiveDataFromChild}>
+                            <div>
+                                <select id="cars" className='select' onChange={receiveDataFromChild}>
                                     <option value="12" >12</option>
                                     <option value="8">8</option>
                                     <option value="18" >18</option>
@@ -108,7 +104,7 @@ function SearchPage() {
                     })
                 }
             </div>
-            <div className='pagination'>
+            <div className='section2'>
                 <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
             </div>
         </div >

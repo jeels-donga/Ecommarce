@@ -103,34 +103,6 @@ function Product1() {
                 })}
 
             </div>
-
-            {/* 
-            <div className='Product-list'>
-                {
-                    product.map((e, i) => {
-                        return (
-                            <div className='product-box' key={i}>
-                                <Link to={`/Product/${e.id}`} className='link '>
-                                    <div className="card-img-top ">
-                                        <img src={e.images[0]} className="img2" alt="..." />
-                                    </div>
-
-                                    <div className='card-text'>
-                                        <h3>{e.title}</h3>
-                                    </div>
-                                    <div className='card-text'>
-                                        <p>Price:-{e.price}</p>
-                                    </div>
-                                    <div className='card-text'>
-                                        <button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link'>More</Link></button>
-                                    </div>
-                                </Link>
-                            </div>
-                        )
-                    })
-                }
-
-            </div> */}
             <div className='section2'>
                 <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
             </div>

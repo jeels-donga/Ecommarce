@@ -16,3 +16,17 @@
 .m1 {
     margin: 5px 5px 24px 5px;
 } */
+.count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.m {
+    padding: 6px;
+    border-radius: 14%;
+    margin: 6px;
+    border: 1px solid;
+    background: cornsilk;
+    width: 30px;
+}

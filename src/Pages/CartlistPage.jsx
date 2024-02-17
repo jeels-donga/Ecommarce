@@ -47,7 +47,7 @@ function CartlistPage() {
                                         <p className='text-center'>price :-{e.price}</p>
                                     </div>
                                     <div className='div1'>
-                                        <div>
+                                        <div className='counter'>
                                             <div className='div'>
                                                 <span className='text-center'>total-items</span>
                                             </div>
@@ -57,7 +57,7 @@ function CartlistPage() {
                                         </div>
                                     </div>
                                     <div className='div1'>
-                                        <div>
+                                        <div className='counter'>
                                             <div className='div'>
                                                 <span className='text-center'>total price</span>
                                             </div>
@@ -67,7 +67,7 @@ function CartlistPage() {
                                         </div>
 
                                     </div>
-                                    <div>
+                                    <div className='div1'>
                                         <Button onClick={() => DataDelete(i)} className='btn1'>Delete</Button>
                                     </div>
                                 </div>
@@ -77,43 +77,6 @@ function CartlistPage() {
                     })
                 }
             </div>
-            {/* <Container>
-                <Row>
-                    <Col >
-                        {data.map((e, i) => {
-                            return (
-                                <div className='border mt-3' key={i}>
-                                    <Row className='p-2' >
-                                        <Col className='d-flex justify-content-center align-items-center align-self-center '>
-                                            <img src={e.images[1]} alt="" className='img1' />
-                                        </Col>
-                                        <Col className='d-flex justify-content-center align-items-center align-self-center '>
-                                            <h6 className='text-center'>{e.title}</h6>
-                                        </Col>
-                                        <Col className='d-flex justify-content-center align-items-center align-self-center '>
-                                            <p className='text-center'>price :-{e.price}</p>
-                                        </Col>
-                                        <Col className='d-flex justify-content-center align-items-center align-self-center '>
-                                            <p className='text-center'>total-items</p>
-                                            <CartCount sendDataToParent={handleDataFromChild} id={i} />
-                                        </Col>
-                                        <Col className='d-flex justify-content-center align-items-center align-self-center '>
-                                            <p className='text-center'>total price</p>
-                                            <p className='text-center'>{ButtonId === i && NewPrice !== 0 ? NewPrice : e.price}</p>
-                                        </Col>
-                                        <Col className='d-flex justify-content-center align-items-center align-self-center '>
-                                            {/* <Button>Submit</Button> */}
-            {/* </Col> */}
-            {/* <Col className='d-flex justify-content-center align-items-center align-self-center '> */}
-            {/* <Button onClick={() => DataDelete(i)}>Delete</Button> */}
-            {/* </Col> */}
-            {/* </Row > */}
-            {/* </div > */}
-            {/* ) */}
-            {/* })} */}
-            {/* </Col > */}
-            {/* </Row > */}
-            {/* </Container > * /} */}
 
         </div >
     )
