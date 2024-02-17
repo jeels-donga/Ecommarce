@@ -65,7 +65,7 @@ function Product1() {
     return (
         <div>
             <Header />
-            <div className='Section2'>
+            {/* <div className='Section2'>
                 <div className='Sub-Home-S2'>
                     <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
                 </div>
@@ -108,7 +108,7 @@ function Product1() {
                     })
                 }
 
-            </div>
+            </div> */}
             {/* <div className='product'>
                 {
                     product.map((e, i) => {
@@ -135,9 +135,9 @@ function Product1() {
                     })
                 }
             </div> */}
-            <div className='Section2'>
+            {/* <div className='Section2'>
                 <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
-            </div>
+            </div> */}
         </div >
     )
 }
