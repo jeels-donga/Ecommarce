@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Col, Container, Row } from 'react-bootstrap'
 import Pagination from '../Component/Pagination'
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -39,13 +38,6 @@ function Product1() {
         if (page !== 1 && currentPage !== page) {
             setCurrentPage(page)
         }
-
-        // const storedData = localStorage.getItem('limit');
-        // if (storedData) {
-        //     // console.log(storedData);
-        //     setLimit(JSON.parse(storedData));
-        //     console.log(limit);
-        // }
     }, []);
 
     const ChangeNextPage = (page) => {
@@ -65,6 +57,29 @@ function Product1() {
     return (
         <div>
             <Header />
+            <div className='section2'>
+                <div className='sub2'>
+                    <div className='pagi'>
+                        <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
+                    </div>
+                    <div className='sub-section2'>
+                        <div className='title'>
+                            <h1>Products</h1>
+                        </div>
+                        <div className='limit'>
+                            <div>
+                                <select id="cars" className='select' onChange={receiveDataFromChild}>
+                                    <option value="12" >12</option>
+                                    <option value="8">8</option>
+                                    <option value="18" >18</option>
+                                    <option value="24" >24</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {/* <div className='Section2'>
                 <div className='Sub-Home-S2'>
                     <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
@@ -135,9 +150,9 @@ function Product1() {
                     })
                 }
             </div> */}
-            {/* <div className='Section2'>
+            <div className='section2'>
                 <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
-            </div> */}
+            </div>
         </div >
     )
 }

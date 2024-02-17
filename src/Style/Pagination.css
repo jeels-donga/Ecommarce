@@ -1,8 +1,17 @@
-/* .btn1 {
-    border: none;
-    border-radius: 6px;
-    background: #5f9ea0;
-    width: 100px;
-    padding: 12px;
-    margin: 10px;
-} */
+.pagination-btn {
+    background: cornsilk;
+    padding: 6px;
+    margin: 0px 6px 0px 0px;
+    border-radius: 7px;
+    border: 1px solid;
+    width: 80px;
+}
+
+.pagination-btn1 {
+    background: cornsilk;
+    padding: 6px;
+    margin: 0px 0px 0px 6px;
+    border-radius: 7px;
+    border: 1px solid;
+    width: 80px;
+}

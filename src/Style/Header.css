@@ -53,6 +53,7 @@ li {
     margin: 0px 12px 0px 12px;
     border-radius: 7px;
     border: 1px solid;
+    width: 80px;
 }
 
 .menu-icon {
@@ -98,7 +99,18 @@ li {
     }
 
     .subheader.active {
+        position: absolute;
         display: block;
+        background: cornsilk;
+    }
+
+    .btn1 {
+        background: bisque;
+        padding: 6px;
+        margin: 0px 12px 0px 12px;
+        border-radius: 7px;
+        border: 1px solid;
+        width: 80px;
     }
 
     .Menuicon {

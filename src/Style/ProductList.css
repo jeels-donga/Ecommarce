@@ -2,3 +2,126 @@
     text-decoration: none;
     color: black;
 }
+
+.section2 {
+    margin: 0% 5% 0% 5%;
+}
+
+.sub2 {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.pagi {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.limit {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.select {
+    width: 70px;
+}
+
+.sub-section2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.m-2 {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+@media only screen and (max-width: 425px) {
+    .sub2 {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .pagi {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .limit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .m-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sub-section2 {
+        display: grid;
+        grid-template-columns: auto auto;
+        order: -1;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .sub2 {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .pagi {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .limit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sub-section2 {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .sub2 {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .pagi {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .limit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sub-section2 {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+
+}
