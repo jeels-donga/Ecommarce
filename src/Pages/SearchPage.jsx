@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import Header from '../Component/Header';
 import axios from 'axios';
 import Pagination from '../Component/Pagination';
+import '../Style/SearchPage.css'
 
 function SearchPage() {
     const [product, setProduct] = useState([]);
@@ -78,31 +79,29 @@ function SearchPage() {
                     </div>
                 </div>
             </div>
-            <div className='product'>
-                {
-                    product.map((e, i) => {
-                        return (
-
-                            <div className='product-box'>
-                                <Link to={`/ Product / ${e.id} `} className='link '>
+            <div className='prduct-list'>
+                {product.map((e, i) => {
+                    return (
+                        <div className='sec1' key={i}>
+                            <Link to={`/Product/${e.id}`} className='link '>
+                                <div className='sub-sec1'>
                                     <div className="card-img-top ">
                                         <img src={e.images[0]} className="img2" alt="..." />
                                     </div>
-
-                                    <div className='card-text'>
-                                        <h3>{e.title}</h3>
+                                    <div className='sec1'>
+                                        <h4>{e.title}</h4>
                                     </div>
-                                    <div className='card-text'>
+                                    <div className='sec1'>
                                         <p>Price:-{e.price}</p>
                                     </div>
-                                    <div className='card-text'>
-                                        <button className='productlist-btn'><Link to={`/ Product / ${e.id} `} className='link'>More</Link></button>
+                                    <div className='sec1'>
+                                        <button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link'>More</Link></button>
                                     </div>
-                                </Link>
-                            </div>
-                        )
-                    })
-                }
+                                </div>
+                            </Link>
+                        </div>)
+                })}
+
             </div>
             <div className='section2'>
                 <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
