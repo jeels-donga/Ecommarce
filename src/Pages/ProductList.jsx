@@ -79,25 +79,30 @@ function Product1() {
                     </div>
                 </div>
             </div>
+            <div className='prduct-list'>
+                {product.map((e, i) => {
+                    return (
+                        <div className='sec1' key={i}>
+                            <div className='sub-sec1'>
+                                <div className="card-img-top ">
+                                    <img src={e.images[0]} className="img2" alt="..." />
+                                </div>
+                                <div className='sec1'>
+                                    <h4>{e.title}</h4>
+                                </div>
+                                <div className='sec1'>
+                                    <p>Price:-{e.price}</p>
+                                </div>
+                                <div className='sec1'>
+                                    <button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link'>More</Link></button>
+                                </div>
+                            </div>
+                        </div>)
+                })}
 
-            {/* <div className='Section2'>
-                <div className='Sub-Home-S2'>
-                    <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
-                </div>
-                <div className='title'>
-                    <h1>Products</h1>
-                </div>
-                <div className='limit'>
-                    <div className='d-flex justify-content-end mt-3'>
-                        <select id="cars" onChange={receiveDataFromChild}>
-                            <option value="12" >12</option>
-                            <option value="8">8</option>
-                            <option value="18" >18</option>
-                            <option value="24" >24</option>
-                        </select>
-                    </div>
-                </div>
             </div>
+
+            {/* 
             <div className='Product-list'>
                 {
                     product.map((e, i) => {
@@ -123,32 +128,6 @@ function Product1() {
                     })
                 }
 
-            </div> */}
-            {/* <div className='product'>
-                {
-                    product.map((e, i) => {
-                        return (
-
-                            <div className='product-box' key={i}>
-                                <Link to={`/Product/${e.id}`} className='link '>
-                                    <div className="card-img-top ">
-                                        <img src={e.images[0]} className="img2" alt="..." />
-                                    </div>
-
-                                    <div className='card-text'>
-                                        <h3>{e.title}</h3>
-                                    </div>
-                                    <div className='card-text'>
-                                        <p>Price:-{e.price}</p>
-                                    </div>
-                                    <div className='card-text'>
-                                        <button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link'>More</Link></button>
-                                    </div>
-                                </Link>
-                            </div>
-                        )
-                    })
-                }
             </div> */}
             <div className='section2'>
                 <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />

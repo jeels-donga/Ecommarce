@@ -45,10 +45,84 @@
     align-items: center;
 }
 
-@media only screen and (max-width: 425px) {
+.prduct-list {
+    margin: 0% 5% 0% 5%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.sec1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* width: 16rem; */
+}
+
+.img2 {
+    width: 16rem;
+    height: 12rem;
+    object-fit: contain;
+    background: white;
+    border: 1px solid;
+    border-radius: 7% 7% 0% 0%;
+}
+
+.sub-sec1 {
+    background-color: cornsilk;
+    height: 347px;
+    margin: 12px;
+    border: 1px solid;
+    border-radius: 7%;
+    width: 16rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.productlist-btn {
+    background: bisque;
+    padding: 6px;
+    margin: 0px 6px 18px 0px;
+    border-radius: 7px;
+    border: 1px solid;
+    width: 80px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .prduct-list {
+        margin: 0% 5% 0% 5%;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+
+    .sub-sec1 {
+        background-color: cornsilk;
+        height: 347px;
+        margin: 12px;
+        border: 1px solid;
+        border-radius: 7%;
+        width: 13rem;
+    }
+
+    .img2 {
+        width: 13rem;
+        height: 12rem;
+        object-fit: contain;
+        background: white;
+        border: 1px solid;
+        border-radius: 7% 7% 0% 0%;
+    }
+
     .sub2 {
         display: grid;
         grid-template-columns: auto;
+    }
+
+    .sub-section2 {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        order: -1;
     }
 
     .pagi {
@@ -56,54 +130,99 @@
         justify-content: center;
         align-items: center;
     }
+}
 
-    .limit {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+@media only screen and (max-width: 768px) {
+    .prduct-list {
+        margin: 0% 5% 0% 5%;
+        display: grid;
+        grid-template-columns: auto auto;
     }
 
-    .m-2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .sub2 {
+        display: grid;
+        grid-template-columns: auto;
     }
 
     .sub-section2 {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 1fr 2fr;
         order: -1;
+    }
+
+    .pagi {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .prduct-list {
+        margin: 0% 5% 0% 5%;
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .sub2 {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .sub-section2 {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        order: -1;
+    }
+
+    .pagi {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
 @media only screen and (max-width: 375px) {
+    .prduct-list {
+        margin: 0% 5% 0% 5%;
+        display: grid;
+        grid-template-columns: auto;
+    }
+
     .sub2 {
         display: grid;
         grid-template-columns: auto;
+    }
+
+    .sub-section2 {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        order: -1;
     }
 
     .pagi {
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    .limit {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sub-section2 {
-        display: grid;
-        grid-template-columns: auto auto;
     }
 }
 
 @media only screen and (max-width: 320px) {
+    .prduct-list {
+        margin: 0% 5% 0% 5%;
+        display: grid;
+        grid-template-columns: auto;
+    }
+
     .sub2 {
         display: grid;
         grid-template-columns: auto;
+    }
+
+    .sub-section2 {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        order: -1;
     }
 
     .pagi {
@@ -111,17 +230,4 @@
         justify-content: center;
         align-items: center;
     }
-
-    .limit {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sub-section2 {
-        display: grid;
-        grid-template-columns: auto auto;
-    }
-
-
 }
