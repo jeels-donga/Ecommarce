@@ -83,20 +83,22 @@ function Product1() {
                 {product.map((e, i) => {
                     return (
                         <div className='sec1' key={i}>
-                            <div className='sub-sec1'>
-                                <div className="card-img-top ">
-                                    <img src={e.images[0]} className="img2" alt="..." />
+                            <Link to={`/Product/${e.id}`} className='link '>
+                                <div className='sub-sec1'>
+                                    <div className="card-img-top ">
+                                        <img src={e.images[0]} className="img2" alt="..." />
+                                    </div>
+                                    <div className='sec1'>
+                                        <h4>{e.title}</h4>
+                                    </div>
+                                    <div className='sec1'>
+                                        <p>Price:-{e.price}</p>
+                                    </div>
+                                    <div className='sec1'>
+                                        <button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link'>More</Link></button>
+                                    </div>
                                 </div>
-                                <div className='sec1'>
-                                    <h4>{e.title}</h4>
-                                </div>
-                                <div className='sec1'>
-                                    <p>Price:-{e.price}</p>
-                                </div>
-                                <div className='sec1'>
-                                    <button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link'>More</Link></button>
-                                </div>
-                            </div>
+                            </Link>
                         </div>)
                 })}
 
