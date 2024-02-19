@@ -1,4 +1,4 @@
-/* .count {
+.count {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,6 +9,6 @@
     border-radius: 14%;
     margin: 6px;
     border: 1px solid;
-    background: cornsilk;
+    background: cadetblue;
     width: 30px;
-} */
+}
