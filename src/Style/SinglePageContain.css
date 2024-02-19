@@ -1,4 +1,4 @@
-/* .container1 {
+.container1 {
     display: flex;
     align-items: center;
     height: 10vh;
@@ -14,7 +14,7 @@
 .button {
     border: none;
     border-radius: 6px;
-    background: bisque;
+    background: cadetblue;
     width: 100px;
     padding: 12px;
 }
@@ -37,7 +37,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1022px) {
     .text {
         text-align: center;
     }
@@ -49,4 +49,4 @@
         justify-content: center;
         margin: 4% 0% 0% 6%;
     }
-} */
+}
