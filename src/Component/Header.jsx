@@ -17,7 +17,7 @@ function Header() {
                 </div>
                 <div className={`subheader ${isOpen ? 'active' : ''}`}>
                     <div className='menu'>
-                        <ul><li><Link to={"/"} className='a1'>Home</Link></li></ul>
+                        <ul><li><Link to={"/"} className='a1 a2'>Home</Link></li></ul>
                     </div>
                     <div className='search'>
                         <input type="text" value={search} onChange={(e) => SetSerach(e.target.value)}

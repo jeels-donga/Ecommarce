@@ -1,7 +1,7 @@
 .header {
-    margin: 0% 5% 0% 5%;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
+    margin: 0% 5% 0% 5%;
 }
 
 .logo {
@@ -17,7 +17,7 @@
 
 .subheader {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
 }
 
 .menu {
@@ -38,22 +38,22 @@ li {
 
 .input {
     height: 25px;
+    border-radius: 25px 0px 0px 25px;
+    padding: 4px;
+    border: 1px solid;
 }
 
 .btn1 {
-    padding: 6px;
-    background: cornsilk;
+    padding: 9px;
+    border-radius: 0px 25px 25px 0px;
     border: 1px solid;
-    border-radius: 11px;
 }
 
-.btn1 {
-    background: cornsilk;
-    padding: 6px;
-    margin: 0px 12px 0px 12px;
-    border-radius: 7px;
-    border: 1px solid;
-    width: 80px;
+.cart {
+    padding: 12px;
+    background: cadetblue;
+    border-radius: 50%;
+    margin: 0px 0px 0px 12px;
 }
 
 .menu-icon {
@@ -68,54 +68,52 @@ li {
     margin: 5px;
 }
 
-.cart {
-    padding: 6px;
-    border-radius: 14%;
-    border: 1px solid;
-    background: cornsilk;
-}
-
-@media (max-width: 768px) {
-    .subheader {
-
-        display: none;
-        /* display: block; */
-        align-items: center;
-        position: absolute;
-        top: 15%;
-        left: 0;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    .search {
+@media (max-width:838px) {
+    .menu {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin: 12px;
+    }
+}
+
+@media (max-width:558px) {
+
+    .subheader {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: cadetblue;
+        padding: 10px 0;
+    }
+
+    .subheader.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
     }
 
     .menu-icon {
         display: block;
-    }
-
-    .subheader.active {
         position: absolute;
-        display: block;
-        background: cornsilk;
+        top: 9%;
+        right: 5%;
     }
 
-    .btn1 {
-        background: bisque;
-        padding: 6px;
-        margin: 0px 12px 0px 12px;
-        border-radius: 7px;
-        border: 1px solid;
-        width: 80px;
+    .cart {
+        padding: 12px;
+        background: white;
+        border-radius: 50%;
+        margin: 0px 0px 0px 12px;
     }
 
-    .Menuicon {
-        position: absolute;
-        top: 6%;
-        right: 4%;
+    .a2 {
+        color: white;
     }
 }

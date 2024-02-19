@@ -57,7 +57,7 @@ function Product1() {
     return (
         <div>
             <Header />
-            <div className='section2'>
+            {/* <div className='section2'>
                 <div className='sub2'>
                     <div className='pagi'>
                         <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
@@ -105,7 +105,7 @@ function Product1() {
             </div>
             <div className='section2'>
                 <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
-            </div>
+            </div> */}
         </div >
     )
 }
