@@ -57,29 +57,27 @@ function Product1() {
     return (
         <div>
             <Header />
-            {/* <div className='section2'>
-                <div className='sub2'>
-                    <div className='pagi'>
-                        <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
+            <div className='section2'>
+                <div className='pagi'>
+                    <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
+                </div>
+                <div className='sub-section2'>
+                    <div className='title'>
+                        <h1>Products</h1>
                     </div>
-                    <div className='sub-section2'>
-                        <div className='title'>
-                            <h1>Products</h1>
-                        </div>
-                        <div className='limit'>
-                            <div>
-                                <select id="cars" className='select' onChange={receiveDataFromChild}>
-                                    <option value="12" >12</option>
-                                    <option value="8">8</option>
-                                    <option value="18" >18</option>
-                                    <option value="24" >24</option>
-                                </select>
-                            </div>
+                    <div className='limit'>
+                        <div>
+                            <select id="cars" className='select' onChange={receiveDataFromChild}>
+                                <option value="12" >12</option>
+                                <option value="8">8</option>
+                                <option value="18" >18</option>
+                                <option value="24" >24</option>
+                            </select>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className='prduct-list'>
+            {/* <div className='prduct-list'>
                 {product.map((e, i) => {
                     return (
                         <div className='sec1' key={i}>
@@ -102,10 +100,10 @@ function Product1() {
                         </div>)
                 })}
 
-            </div>
+            </div> */}
             <div className='section2'>
                 <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
-            </div> */}
+            </div>
         </div >
     )
 }

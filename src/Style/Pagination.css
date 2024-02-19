@@ -1,17 +1,19 @@
 .pagination-btn {
-    background: cornsilk;
+    width: 70px;
     padding: 6px;
-    margin: 0px 6px 0px 0px;
-    border-radius: 7px;
+    border-radius: 10px;
     border: 1px solid;
-    width: 80px;
+    background: cadetblue;
+    color: white;
+    margin: 0px 0px 0px 5px;
 }
 
 .pagination-btn1 {
-    background: cornsilk;
+    width: 70px;
     padding: 6px;
-    margin: 0px 0px 0px 6px;
-    border-radius: 7px;
+    border-radius: 10px;
     border: 1px solid;
-    width: 80px;
+    background: cadetblue;
+    color: white;
+    margin: 0px 5px 0px 0px;
 }
