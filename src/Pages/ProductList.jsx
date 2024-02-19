@@ -77,7 +77,7 @@ function Product1() {
                     </div>
                 </div>
             </div>
-            {/* <div className='prduct-list'>
+            <div className='prduct-list'>
                 {product.map((e, i) => {
                     return (
                         <div className='sec1' key={i}>
@@ -87,21 +87,21 @@ function Product1() {
                                         <img src={e.images[0]} className="img2" alt="..." />
                                     </div>
                                     <div className='sec1'>
-                                        <h4>{e.title}</h4>
+                                        <h4 className='a2'>{e.title}</h4>
                                     </div>
                                     <div className='sec1'>
-                                        <p>Price:-{e.price}</p>
+                                        <p className='a2'>Price:-{e.price}</p>
                                     </div>
                                     <div className='sec1'>
-                                        <button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link'>More</Link></button>
+                                        <button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link '>More</Link></button>
                                     </div>
                                 </div>
                             </Link>
                         </div>)
                 })}
 
-            </div> */}
-            <div className='section2'>
+            </div >
+            <div className='section2 section3'>
                 <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
             </div>
         </div >
