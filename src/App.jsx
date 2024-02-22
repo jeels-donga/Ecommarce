@@ -5,6 +5,7 @@ import SingleProduct from './Pages/SingleProduct';
 import CartlistPage from './Pages/CartlistPage';
 import SearchPage from './Pages/SearchPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.js'
 function App() {
   return (
     <Routes>

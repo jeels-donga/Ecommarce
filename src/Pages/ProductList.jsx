@@ -96,7 +96,7 @@ function ProductList() {
                                             <p className="card-text text-center">Price:-{e.price}</p>
 
                                             <div className='sec1'>
-                                                <Button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link '>More</Link></Button>
+                                                <Button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link1'>More</Link></Button>
                                             </div>
                                         </div>
                                     </div>

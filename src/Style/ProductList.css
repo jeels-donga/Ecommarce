@@ -36,3 +36,8 @@
 .card-text {
     color: white !important;
 }
+
+.productlist-btn {
+    background-color: white !important;
+    color: black !important;
+}

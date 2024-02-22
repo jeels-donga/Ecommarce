@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../Style/Header.css'
 import { Link } from 'react-router-dom'
+import { Col, Row } from 'react-bootstrap';
 function Header() {
     const [search, SetSerach] = useState('');
     const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +12,48 @@ function Header() {
 
     return (
         <>
+            <nav className="navbar navbar-expand-lg ">
+                <div className="container">
+                    <h4><Link to={"/"} className='a1'>LOGO</Link></h4>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <Row className='w-100'>
+                            <Col md={6} xs={12}>
+                                <div className='d-flex justify-content-center'>
+                                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                                        <li className="nav-item">
+                                            <a className="nav-link active" aria-current="page" href="#">Home</a>
+                                        </li>
+                                        <li className="nav-item">
+                                            <a className="nav-link" href="#">Link</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </Col>
+                            <Col md={6} xs={12}>
+                                <div className='d-md-flex d-block justify-content-evenly'>
+                                    <form className="d-flex" role="search">
+                                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                                        <button className="btn btn-outline-primary" type="submit">Search</button>
+                                    </form>
+                                    <div className='d-flex justify-content-center'>
+                                        <div className='cart mt-2'>
+                                            <Link to={'/SingleProduct/CartList'} className='a1'> <i className="fa fa-shopping-cart cart-icon" ></i> </Link>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </Col>
+                        </Row>
+
+
+                    </div>
+                </div>
+            </nav >
             {/* <div className='header'>
                 <div className='logo'>
                     <h1> <Link to={"/"} className='a1'>LOGO</Link></h1>
