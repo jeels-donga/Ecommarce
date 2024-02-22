@@ -1,63 +1,12 @@
-/* section2 */
-.section2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 0% 5% 0% 5%;
-}
-
-.pagi {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-}
-
-.sub-section2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .limit {
     display: flex;
     justify-content: end;
     align-items: center;
 }
 
-.select {
-    width: 50px;
-}
-
-@media (max-width:556px) {
-    .section2 {
-        display: grid;
-        grid-template-columns: 1fr;
-        margin: 0% 5% 0% 5%;
-    }
-
-    .pagi {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sub-section2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        order: -1;
-    }
-}
-
-/* productlist */
-.prduct-list {
-    margin: 0% 5% 2% 5%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
+.link {
+    text-decoration: none;
+    color: white;
 }
 
 .sec1 {
@@ -66,154 +15,24 @@
     align-items: center;
 }
 
-.sub-sec1 {
-    background: cadetblue;
-    width: 250px;
-    border: 1px solid;
-    border-radius: 25px;
+.img2 {
+    height: 230px;
+    object-fit: contain;
 }
 
 .card-img-top {
-    background: white;
-    border-radius: 25px 26px 0px 0px;
+    background-color: white;
 }
 
-.img2 {
-    width: 250px;
-    height: 200px;
-    object-fit: contain;
-    border-radius: 25px;
+.card {
+    background-color: cadetblue !important;
 }
 
-.a2 {
-    text-decoration: none;
-    color: black;
-    text-align: center;
-    width: 200px;
-    height: 20px;
+.title {
     overflow: hidden;
+    height: 28px;
 }
 
-.productlist-btn {
-    width: 100px;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 25px;
-    border: 1px solid;
-}
-
-.link {
-    color: cadetblue;
-}
-
-@media (max-width:1190px) {
-
-    .sub-sec1 {
-        background: cadetblue;
-        width: 242px;
-        border: 1px solid;
-        border-radius: 25px;
-    }
-
-    .img2 {
-        width: 242px;
-        height: 200px;
-        object-fit: contain;
-        border-radius: 25px;
-    }
-}
-
-@media (max-width:1158px) {
-
-    .sub-sec1 {
-        background: cadetblue;
-        width: 230px;
-        border: 1px solid;
-        border-radius: 25px;
-    }
-
-    .img2 {
-        width: 230px;
-        height: 200px;
-        object-fit: contain;
-        border-radius: 25px;
-    }
-}
-
-@media (max-width:1102px) {
-
-    .sub-sec1 {
-        background: cadetblue;
-        width: 210px;
-        border: 1px solid;
-        border-radius: 25px;
-    }
-
-    .img2 {
-        width: 210px;
-        height: 200px;
-        object-fit: contain;
-        border-radius: 25px;
-    }
-}
-
-@media (max-width:1024px) {
-    .prduct-list {
-        margin: 0% 5% 2% 5%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 20px;
-    }
-
-    .sub-sec1 {
-        background: cadetblue;
-        width: 210px;
-        border: 1px solid;
-        border-radius: 25px;
-    }
-
-    .img2 {
-        width: 210px;
-        height: 200px;
-        object-fit: contain;
-        border-radius: 25px;
-    }
-}
-
-@media (max-width:768px) {
-    .prduct-list {
-        margin: 0% 5% 2% 5%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-
-    .sub-sec1 {
-        background: cadetblue;
-        width: 210px;
-        border: 1px solid;
-        border-radius: 25px;
-    }
-
-    .img2 {
-        width: 210px;
-        height: 200px;
-        object-fit: contain;
-        border-radius: 25px;
-    }
-}
-
-@media (max-width: 554px) {
-    .prduct-list {
-        margin: 5% 5% 2% 5%;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .section3 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.card-text {
+    color: white !important;
 }

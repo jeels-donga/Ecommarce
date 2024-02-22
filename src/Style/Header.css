@@ -1,4 +1,4 @@
-.header {
+/* .header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0% 5% 0% 5%;
@@ -138,7 +138,6 @@ li {
 
     .search {
         display: block;
-        /* flex-direction: column; */
         justify-content: end;
         align-items: center;
     }
@@ -168,4 +167,4 @@ li {
     .a2 {
         color: white;
     }
-}
+} */

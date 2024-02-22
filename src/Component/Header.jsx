@@ -11,7 +11,7 @@ function Header() {
 
     return (
         <>
-            <div className='header'>
+            {/* <div className='header'>
                 <div className='logo'>
                     <h1> <Link to={"/"} className='a1'>LOGO</Link></h1>
                 </div>
@@ -36,7 +36,7 @@ function Header() {
                     </div>
 
                 </div>
-            </div >
+            </div > */}
         </>
     )
 }

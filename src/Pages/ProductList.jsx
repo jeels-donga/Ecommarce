@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../Component/Header';
 import '../Style/ProductList.css'
+import { Button, Col, Row } from 'react-bootstrap';
 function ProductList() {
     const [product, setProduct] = useState([]);
     const [limit, setLimit] = useState(12);
@@ -56,16 +57,16 @@ function ProductList() {
     return (
         <div>
             <Header />
-            <div className='section2'>
-                <div className='pagi'>
-                    <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
-                </div>
-                <div className='sub-section2'>
-                    <div className='title'>
-                        <h1>Products</h1>
-                    </div>
-                    <div className='limit'>
-                        <div>
+            <div className='container'>
+                <Row>
+                    <Col sm={4} xs={12} className='order-md-1 order-3 d-flex justify-content-md-start justify-content-center'>
+                        <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
+                    </Col>
+                    <Col sm={4} xs={12} className='order-1'>
+                        <h1 className='text-center'>Products</h1>
+                    </Col>
+                    <Col sm={4} xs={12} className='order-2'>
+                        <div className='d-flex justify-content-md-end justify-content-center align-items-center mt-3'>
                             <select id="cars" className='select' onChange={receiveDataFromChild}>
                                 <option value="12" >12</option>
                                 <option value="8">8</option>
@@ -73,40 +74,40 @@ function ProductList() {
                                 <option value="24" >24</option>
                             </select>
                         </div>
-                    </div>
-                </div>
+                    </Col>
+                </Row>
             </div>
-            <div className='prduct-list'>
-                {product.map((e, i) => {
-                    return (
-                        <div className='sec1' key={i}>
+            <div className='container'>
+                <Row>
+                    {product.map((e, i) => {
+                        return (
+                            <Col key={i} md={3} sm={4} >
+                                <div className='d-flex justify-content-center'>
+                                    <div className="card m-2" style={{ width: '16rem' }}>
+                                        <Link to={`/Product/${e.id}`} className='link '>
+                                            <div className='card-img-top'>
+                                                <img src={e.images[0]} className="card-img-top img2" alt="..." />
+                                            </div>
+                                        </Link>
+                                        <div className="card-body">
+                                            <Link to={`/Product/${e.id}`} className='link '>
+                                                <h5 className="card-title text-center title">{e.title}</h5>
+                                            </Link>
+                                            <p className="card-text text-center">Price:-{e.price}</p>
 
-                            <div className='sub-sec1'>
-
-                                <div className="card-img-top ">
-                                    <Link to={`/Product/${e.id}`} className='link '>
-                                        <img src={e.images[0]} className="img2" alt="..." />
-                                    </Link>
+                                            <div className='sec1'>
+                                                <Button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link '>More</Link></Button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div className='sec1'>
-                                    <Link to={`/Product/${e.id}`} className='link '>
-                                        <h4 className='a2'>{e.title}</h4>
-                                    </Link>
-                                </div>
-                                <div className='sec1'>
-                                    <p className='a2'>Price:-{e.price}</p>
-                                </div>
-                                <div className='sec1'>
-                                    <button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link '>More</Link></button>
-                                </div>
-                            </div>
-
-                        </div>)
-                })}
-
-            </div >
-            <div className='section2 section3'>
+                            </Col>
+                        )
+                    })}
+                </Row>
+            </div>
+            <div className='container d-flex justify-content-md-start justify-content-center' xs={12}>
                 <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
             </div>
         </div >
