@@ -5,7 +5,7 @@ import '../Style/SinglePageContain.css'
 function SinglePageContain(props) {
     const [showSign, setShowSign] = useState(false);
     const SetData = (data) => {
-        console.log(data);
+        // console.log(data);
         setShowSign(!showSign);
         props.ParentData(data);
     }

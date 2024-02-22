@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../Component/Header';
 import '../Style/ProductList.css'
-function Product1() {
+function ProductList() {
     const [product, setProduct] = useState([]);
     const [limit, setLimit] = useState(12);
     const [currentPage, setCurrentPage] = useState(1);
@@ -28,7 +28,6 @@ function Product1() {
     }, [currentPage, limit]);
 
     useEffect(() => {
-
         if (!isNaN(page)) {
             page = Number(page);
         } else {
@@ -81,22 +80,28 @@ function Product1() {
                 {product.map((e, i) => {
                     return (
                         <div className='sec1' key={i}>
-                            <Link to={`/Product/${e.id}`} className='link '>
-                                <div className='sub-sec1'>
-                                    <div className="card-img-top ">
+
+                            <div className='sub-sec1'>
+
+                                <div className="card-img-top ">
+                                    <Link to={`/Product/${e.id}`} className='link '>
                                         <img src={e.images[0]} className="img2" alt="..." />
-                                    </div>
-                                    <div className='sec1'>
-                                        <h4 className='a2'>{e.title}</h4>
-                                    </div>
-                                    <div className='sec1'>
-                                        <p className='a2'>Price:-{e.price}</p>
-                                    </div>
-                                    <div className='sec1'>
-                                        <button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link '>More</Link></button>
-                                    </div>
+                                    </Link>
                                 </div>
-                            </Link>
+
+                                <div className='sec1'>
+                                    <Link to={`/Product/${e.id}`} className='link '>
+                                        <h4 className='a2'>{e.title}</h4>
+                                    </Link>
+                                </div>
+                                <div className='sec1'>
+                                    <p className='a2'>Price:-{e.price}</p>
+                                </div>
+                                <div className='sec1'>
+                                    <button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link '>More</Link></button>
+                                </div>
+                            </div>
+
                         </div>)
                 })}
 
@@ -108,4 +113,4 @@ function Product1() {
     )
 }
 
-export default Product1
+export default ProductList

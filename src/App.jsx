@@ -4,6 +4,7 @@ import React from 'react';
 import SingleProduct from './Pages/SingleProduct';
 import CartlistPage from './Pages/CartlistPage';
 import SearchPage from './Pages/SearchPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <Routes>

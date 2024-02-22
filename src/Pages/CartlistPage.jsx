@@ -35,7 +35,7 @@ function CartlistPage() {
                 {
                     data.map((e, i) => {
                         return (
-                            <div>
+                            <div key={i}>
                                 <div className='container'>
                                     <div className='div1'>
                                         <img src={e.images[1]} alt="" className='img1' />
