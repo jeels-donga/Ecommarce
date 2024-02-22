@@ -19,7 +19,7 @@ function SinglePageContain(props) {
                 <p className='text-sm-start text-center'><b>Brand</b> {props.data.brand}</p>
                 <p className='text-sm-start text-center'><b>Category</b> {props.data.category}</p>
                 <div className='container1'>
-                    <Button onClick={() => SetData(props.data)} >Add to Cart</Button>
+                    <button onClick={() => SetData(props.data)} className='btn2'>Add to Cart</button>
                     <div className={showSign ? "sign animate" : "sign"}>&#10004;</div>
                 </div>
             </div>

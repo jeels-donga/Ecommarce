@@ -11,6 +11,14 @@
     color: green;
 }
 
+.btn2 {
+    border: none;
+    border-radius: 5px;
+    background: cadetblue;
+    width: 100px;
+    padding: 8px;
+    margin: 0px;
+}
 
 .animate {
     animation: fadeIn 1s ease forwards;

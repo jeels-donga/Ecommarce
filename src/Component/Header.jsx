@@ -22,7 +22,7 @@ function Header() {
                         <Row className='w-100'>
                             <Col md={6} xs={12}>
                                 <div className='d-flex justify-content-center'>
-                                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <ul className="navbar-nav  mb-2 mb-lg-0">
                                         <li className="nav-item">
                                             <a className="nav-link active" aria-current="page" href="#">Home</a>
                                         </li>
@@ -35,10 +35,13 @@ function Header() {
                             </Col>
                             <Col md={6} xs={12}>
                                 <div className='d-md-flex d-block justify-content-evenly'>
-                                    <form className="d-flex" role="search">
-                                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                                        <button className="btn btn-outline-primary" type="submit">Search</button>
-                                    </form>
+                                    <div className='d-flex justify-content-center'>
+                                        <form className="d-flex form1" role="search">
+                                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                                            <button className="btn btn-outline-primary" type="submit">Search</button>
+                                        </form>
+                                    </div>
+
                                     <div className='d-flex justify-content-center'>
                                         <div className='cart mt-2'>
                                             <Link to={'/SingleProduct/CartList'} className='a1'> <i className="fa fa-shopping-cart cart-icon" ></i> </Link>
