@@ -1,4 +1,4 @@
-/* .container1 {
+.container1 {
     display: flex;
     align-items: center;
     height: 10vh;
@@ -11,13 +11,6 @@
     color: green;
 }
 
-.button {
-    border: none;
-    border-radius: 6px;
-    background: cadetblue;
-    width: 100px;
-    padding: 12px;
-}
 
 .animate {
     animation: fadeIn 1s ease forwards;
@@ -37,10 +30,7 @@
     }
 }
 
-@media (max-width: 1022px) {
-    .text {
-        text-align: center;
-    }
+@media (max-width: 575px) {
 
     .container1 {
         display: flex;
@@ -49,4 +39,4 @@
         justify-content: center;
         margin: 4% 0% 0% 6%;
     }
-} */
+}

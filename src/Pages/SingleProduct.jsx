@@ -7,6 +7,7 @@ import axios from 'axios';
 import SinglePageContain from '../Component/SinglePageContain';
 import SinglePageImg from '../Component/SinglePageImg';
 import '../Style/SingleProduct.css'
+import { Col, Row } from 'react-bootstrap';
 function SingleProduct() {
     const { id } = useParams();
     const [productData, setProductData] = useState(null);
@@ -32,12 +33,18 @@ function SingleProduct() {
     return (
         <div>
             <Header />
-            <div className='SinglePage-div'>
+            <div className='container mt-3'>
                 {productData == null ? <Loading /> :
-                    <>
-                        <SinglePageImg data={productData} subCurrentImg={subCurrentImg} setSubCurrentImg={setSubCurrentImg} />
-                        <SinglePageContain data={productData} ParentData={handleChildData} />
-                    </>
+                    <Row>
+                        <Col md={6} xs={12}>
+                            <SinglePageImg data={productData} subCurrentImg={subCurrentImg} setSubCurrentImg={setSubCurrentImg} />
+                        </Col>
+                        <Col md={6} xs={12}>
+                            <SinglePageContain data={productData} ParentData={handleChildData} />
+                        </Col>
+
+
+                    </Row>
                 }
             </div>
         </div >

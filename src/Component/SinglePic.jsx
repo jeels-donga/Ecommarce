@@ -6,7 +6,6 @@ function SinglePic(props) {
         props.SetParentData(id);
 
     };
-    // console.log(props.isBorder);
     return (
         <>
             <div key={props.id}>
