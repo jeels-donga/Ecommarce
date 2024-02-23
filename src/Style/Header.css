@@ -25,3 +25,32 @@
      border-radius: 10px;
      border: none;
  }
+
+ .search:hover {
+     padding: 6px 12px;
+     background-color: white;
+     border-radius: 10px;
+     border: 1px solid cadetblue;
+ }
+
+ .search:hover .a1 {
+     text-decoration: none;
+     color: cadetblue;
+ }
+
+ .cart:hover {
+     background: white;
+     width: 35px;
+     height: 35px;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 5px;
+     border: 1px solid cadetblue;
+ }
+
+ .cart:hover .a1 {
+     text-decoration: none;
+     color: cadetblue;
+ }

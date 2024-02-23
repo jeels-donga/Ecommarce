@@ -25,8 +25,8 @@ function Header() {
                             <div></div>
                             <div className='d-flex justify-content-center'>
                                 <form className="d-flex form1" role="search">
-                                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                                    <button className="search" type="submit">Search</button>
+                                    <input className="form-control me-2" type="search" value={search} onChange={(e) => SetSerach(e.target.value)} placeholder="Search" aria-label="Search" />
+                                    <button className="search" type="submit"> <Link to={`/Search/${search}`} className='a1'>Search</Link></button>
                                 </form>
                             </div>
                             <div className='d-flex justify-content-center'>

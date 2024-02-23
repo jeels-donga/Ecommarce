@@ -28,18 +28,6 @@ function SearchPage() {
 
         fetchData();
     }, [search, currentPage, limit]);
-    // useEffect(() => {
-
-    //     if (!isNaN(page)) {
-    //         page = Number(page);
-    //     } else {
-    //         page = 1;
-    //     }
-
-    //     if (page !== 1 && currentPage !== page) {
-    //         setCurrentPage(page)
-    //     }
-    // }, []);
     const ChangeNextPage = (page) => {
         window.history.pushState(null, null, `${page + 1} `);
         setCurrentPage(page + 1);

@@ -1,4 +1,33 @@
-.limit {
+.img {
+    height: 230px;
+    object-fit: contain;
+    background-color: white;
+}
+
+.box {
+    background-color: cadetblue !important;
+    /* border: none; */
+    margin: 10px;
+}
+
+.link1 {
+    color: black;
+}
+
+.productlist-btn:hover .link1 {
+    color: cadetblue;
+}
+
+.productlist-btn {
+    background-color: white !important;
+}
+
+.title {
+    overflow: hidden;
+    height: 28px;
+}
+
+/* .limit {
     display: flex;
     justify-content: end;
     align-items: center;
@@ -40,4 +69,4 @@
 .productlist-btn {
     background-color: white !important;
     color: black !important;
-}
+} */
