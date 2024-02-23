@@ -57,7 +57,7 @@ function ProductList() {
     return (
         <div>
             <Header />
-            <div className='container'>
+            {/* <div className='container'>
                 <Row>
                     <Col sm={4} xs={12} className='order-md-1 order-3 d-flex justify-content-md-start justify-content-center'>
                         <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
@@ -76,8 +76,8 @@ function ProductList() {
                         </div>
                     </Col>
                 </Row>
-            </div>
-            <div className='container'>
+            </div> */}
+            {/* <div className='container'>
                 <Row>
                     {product.map((e, i) => {
                         return (
@@ -106,10 +106,10 @@ function ProductList() {
                         )
                     })}
                 </Row>
-            </div>
-            <div className='container d-flex justify-content-md-start justify-content-center' xs={12}>
+            </div> */}
+            {/* <div className='container d-flex justify-content-md-start justify-content-center' xs={12}>
                 <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
-            </div>
+            </div> */}
         </div >
     )
 }

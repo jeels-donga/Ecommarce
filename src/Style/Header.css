@@ -1,18 +1,27 @@
-.a1 {
-    text-decoration: none;
-    color: black;
-}
+ .a1 {
+     text-decoration: none;
+     color: black;
+ }
 
-.cart {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: cadetblue;
-}
+ .form1 {
+     height: 35px;
+     margin: 8px;
+ }
 
-.form1 {
-    height: 37px;
-}
+ .cart {
+     background: cadetblue;
+     width: 35px;
+     height: 35px;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 5px;
+ }
+
+ .search {
+     padding: 6px 12px;
+     background-color: cadetblue;
+     border-radius: 10px;
+     border: none;
+ }
