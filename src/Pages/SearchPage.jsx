@@ -4,6 +4,7 @@ import Header from '../Component/Header';
 import axios from 'axios';
 import Pagination from '../Component/Pagination';
 import '../Style/SearchPage.css'
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 
 function SearchPage() {
     const [product, setProduct] = useState([]);
@@ -45,55 +46,55 @@ function SearchPage() {
     return (
         <div>
             <Header />
-            <div className='section2'>
-                <div className='sub2'>
-                    <div className='pagi'>
+            <Container>
+                <Row>
+                    <Col lg={4} md={5} sm={6} xs={12} className=' order-md-0 order-3 d-flex justify-content-md-start justify-content-center'>
                         <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
-                    </div>
-                    <div className='sub-section2'>
-                        <div className='title'>
-                            <h1>Products</h1>
+                    </Col>
+                    <Col lg={4} md={4} sm={12} xs={12} className=' order-md-1 order-0'>
+                        <h1 className='text-center'>Products</h1>
+                    </Col>
+                    <Col lg={4} md={3} sm={6} xs={12} className=' order-md-2 order-1'>
+                        <div className='d-flex justify-content-md-end justify-content-center align-items-center mt-3'>
+                            <select id="cars" className='select' onChange={receiveDataFromChild}>
+                                <option value="12" >12</option>
+                                <option value="8">8</option>
+                                <option value="18" >18</option>
+                                <option value="24" >24</option>
+                            </select>
                         </div>
-                        <div className='limit'>
-                            <div>
-                                <select id="cars" className='select' onChange={receiveDataFromChild}>
-                                    <option value="12" >12</option>
-                                    <option value="8">8</option>
-                                    <option value="18" >18</option>
-                                    <option value="24" >24</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='prduct-list'>
-                {product.map((e, i) => {
-                    return (
-                        <div className='sec1' key={i}>
-                            <Link to={`/Product/${e.id}`} className='link '>
-                                <div className='sub-sec1'>
-                                    <div className="card-img-top ">
-                                        <img src={e.images[0]} className="img2" alt="..." />
-                                    </div>
-                                    <div className='sec1'>
-                                        <h4>{e.title}</h4>
-                                    </div>
-                                    <div className='sec1'>
-                                        <p>Price:-{e.price}</p>
-                                    </div>
-                                    <div className='sec1'>
-                                        <button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link'>More</Link></button>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>)
-                })}
+                    </Col>
+                </Row>
+            </Container>
+            <Container>
+                <Row>
+                    {product.map((e, i) => {
+                        return (
+                            <Col lg={3} md={4} sm={6} xs={12} key={i}>
+                                <div className='d-flex justify-content-center'>
+                                    <Card style={{ width: '18rem' }} className='box' >
+                                        <Card.Img variant="top" src={e.images[0]} className='img' />
+                                        <Card.Body >
+                                            <Card.Title className='text-center title'>{e.title}</Card.Title>
+                                            <Card.Text className='text-center'>Price:-{e.price}</Card.Text>
+                                            <div className='d-flex justify-content-center'>
+                                                <Button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link1'>More</Link></Button>
+                                            </div>
 
-            </div>
-            <div className='section2'>
-                <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
-            </div>
+                                        </Card.Body>
+                                    </Card>
+                                </div>
+                            </Col>
+                        )
+                    })}
+                </Row>
+            </Container>
+            <Container>
+                <div className='d-flex justify-content-md-start justify-content-center' xs={12}>
+                    <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
+                </div>
+            </Container>
+
         </div >
     )
 }

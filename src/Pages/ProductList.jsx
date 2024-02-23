@@ -100,26 +100,6 @@ function ProductList() {
                     })}
                 </Row>
             </Container>
-            {/* <div className='container'>
-                <Row>
-                    <Col sm={4} xs={12} className='order-md-1 order-3 d-flex justify-content-md-start justify-content-center'>
-                        <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
-                    </Col>
-                    <Col sm={4} xs={12} className='order-1'>
-                        <h1 className='text-center'>Products</h1>
-                    </Col>
-                    <Col sm={4} xs={12} className='order-2'>
-                        <div className='d-flex justify-content-md-end justify-content-center align-items-center mt-3'>
-                            <select id="cars" className='select' onChange={receiveDataFromChild}>
-                                <option value="12" >12</option>
-                                <option value="8">8</option>
-                                <option value="18" >18</option>
-                                <option value="24" >24</option>
-                            </select>
-                        </div>
-                    </Col>
-                </Row>
-            </div> */}
             <Container>
                 <div className='d-flex justify-content-md-start justify-content-center' xs={12}>
                     <Pagination NextPage={() => ChangeNextPage(currentPage)} PreviousPage={() => ChangePreviousPage(currentPage)} Page={currentPage} />
