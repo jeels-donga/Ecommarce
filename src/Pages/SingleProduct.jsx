@@ -42,8 +42,6 @@ function SingleProduct() {
                         <Col md={6} xs={12}>
                             <SinglePageContain data={productData} ParentData={handleChildData} />
                         </Col>
-
-
                     </Row>
                 }
             </div>

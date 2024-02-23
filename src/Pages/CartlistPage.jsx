@@ -3,6 +3,7 @@ import Header from '../Component/Header'
 import '../Style/CartlistPage.css'
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import CartCount from '../Component/CartCount';
+import { isAllOf } from '@reduxjs/toolkit';
 
 function CartlistPage() {
     const [data, setData] = useState([]);
@@ -35,92 +36,53 @@ function CartlistPage() {
                 {data.map((e, i) => {
                     return (
                         <div key={i}>
-                            <div className='d-flex justify-content-evenly border p-2'>
-                                <div className='div1'>
-                                    <img src={e.images[1]} alt="" className='img1' />
-                                </div>
-                                <div className='div1'>
-                                    <h3 className='text-center'>{e.title}</h3>
-                                </div>
-                                <div className='div1'>
-                                    <p className='text-center'>price :-{e.price}</p>
-                                </div>
-                                <div className='div1'>
-                                    <div className='counter'>
-                                        <div className='div'>
-                                            <span className='text-center'>total-items</span>
+                            <div className='border mt-5'>
+                                <Row>
+                                    <Col md={2} xs={12} className='div1'>
+                                        <img src={e.images[1]} alt="" className='img1' />
+                                    </Col>
+                                    <Col md={2} xs={12} className='div1'>
+                                        <h3 className='text-center'>{e.title}</h3>
+                                    </Col>
+                                    <Col md={2} xs={12} className='div1'>
+                                        <p className='text-center'>price :-{e.price}</p>
+                                    </Col>
+                                    <Col md={2} xs={12} className='div1'>
+                                        <div className='div1'>
+                                            <div className='counter'>
+                                                <div className='div'>
+                                                    <span className='text-center'>total-items</span>
+                                                </div>
+                                                <div >
+                                                    <CartCount sendDataToParent={handleDataFromChild} id={i} />
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div >
-                                            <CartCount sendDataToParent={handleDataFromChild} id={i} />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='div1'>
-                                    <div className='counter'>
-                                        <div className='div'>
-                                            <span className='text-center'>total price</span>
-                                        </div>
-                                        <div className='div'>
-                                            <span className='text-center'>{ButtonId === i && NewPrice !== 0 ? NewPrice : e.price}</span>
-                                        </div>
-                                    </div>
+                                    </Col>
+                                    <Col md={2} xs={12} className='div1'>
+                                        <div className='div1'>
+                                            <div className='counter'>
+                                                <div className='div'>
+                                                    <span className='text-center'>total price</span>
+                                                </div>
+                                                <div className='div'>
+                                                    <span className='text-center'>{ButtonId === i && NewPrice !== 0 ? NewPrice : e.price}</span>
+                                                </div>
+                                            </div>
 
-                                </div>
-                                <div className='div1'>
-                                    <button onClick={() => DataDelete(i)} className='btn1'>Delete</button>
-                                </div>
+                                        </div>
+                                    </Col>
+                                    <Col md={2} xs={12}>
+                                        <div className='div1'>
+                                            <button onClick={() => DataDelete(i)} className='btn1'>Delete</button>
+                                        </div>
+                                    </Col>
+                                </Row>
                             </div>
                         </div>
                     )
                 })}
-            </Container>
-            {/* <div className='cart-main-div'>
-                {
-                    data.map((e, i) => {
-                        return (
-                            <div key={i}>
-                                <div className='container'>
-                                    <div className='div1'>
-                                        <img src={e.images[1]} alt="" className='img1' />
-                                    </div>
-                                    <div className='div1'>
-                                        <h3 className='text-center'>{e.title}</h3>
-                                    </div>
-                                    <div className='div1'>
-                                        <p className='text-center'>price :-{e.price}</p>
-                                    </div>
-                                    <div className='div1'>
-                                        <div className='counter'>
-                                            <div className='div'>
-                                                <span className='text-center'>total-items</span>
-                                            </div>
-                                            <div >
-                                                <CartCount sendDataToParent={handleDataFromChild} id={i} />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='div1'>
-                                        <div className='counter'>
-                                            <div className='div'>
-                                                <span className='text-center'>total price</span>
-                                            </div>
-                                            <div className='div'>
-                                                <span className='text-center'>{ButtonId === i && NewPrice !== 0 ? NewPrice : e.price}</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div className='div1'>
-                                        <Button onClick={() => DataDelete(i)} className='btn1'>Delete</Button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        )
-                    })
-                }
-            </div> */}
-
+            </Container >
         </div >
     )
 }
