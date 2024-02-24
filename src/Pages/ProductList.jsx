@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import Pagination from '../Component/Pagination'
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
-import Header from '../Component/Header';
 import '../Style/ProductList.css'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import Categorys from '../Component/Categorys';
 function ProductList() {
     const [product, setProduct] = useState([]);
     const [limit, setLimit] = useState(12);
@@ -56,7 +56,6 @@ function ProductList() {
     };
     return (
         <div>
-            <Header />
             <Container>
                 <Row>
                     <Col lg={4} md={5} sm={6} xs={12} className=' order-md-0 order-3 d-flex justify-content-md-start justify-content-center'>
@@ -77,6 +76,7 @@ function ProductList() {
                     </Col>
                 </Row>
             </Container>
+            <Categorys />
             <Container>
                 <Row>
                     {product.map((e, i) => {

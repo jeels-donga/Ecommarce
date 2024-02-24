@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../Component/Header'
 import { useParams } from 'react-router-dom';
 import Loading from '../Component/Loading';
 import '../Style/SinglePageImg.css'
@@ -24,7 +23,7 @@ function SingleProduct() {
         if (storedObjects) {
             setList(JSON.parse(storedObjects));
         }
-    }, [])
+    }, [id])
     const handleChildData = (data) => {
         const TotalData = [...list, data];
         setList(TotalData);
@@ -32,7 +31,6 @@ function SingleProduct() {
     };
     return (
         <div>
-            <Header />
             <div className='container mt-3'>
                 {productData == null ? <Loading /> :
                     <Row>

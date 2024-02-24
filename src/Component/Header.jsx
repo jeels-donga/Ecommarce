@@ -1,14 +1,9 @@
 import React, { useState } from 'react'
 import '../Style/Header.css'
 import { Link } from 'react-router-dom'
-import { Col, Container, Nav, NavDropdown, Navbar, Row } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 function Header() {
     const [search, SetSerach] = useState('');
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
 
     return (
         <>

@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../Component/Header'
 import '../Style/CartlistPage.css'
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import CartCount from '../Component/CartCount';
-import { isAllOf } from '@reduxjs/toolkit';
 
 function CartlistPage() {
     const [data, setData] = useState([]);
@@ -28,10 +26,11 @@ function CartlistPage() {
         setButtonId(id);
         setDataFromChild(count);
         setNewPrice(count * data[id].price);
+        console.log(dataFromChild);
     };
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
             <Container>
                 {data.map((e, i) => {
                     return (

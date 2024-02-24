@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Col } from 'react-bootstrap'
+import { Col } from 'react-bootstrap'
 import '../Style/SinglePageContain.css'
 
 function SinglePageContain(props) {

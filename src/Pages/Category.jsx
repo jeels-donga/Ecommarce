@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from 'react'
+import { Card, Col, Container, Row, Button } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Pagination from '../Component/Pagination';
-import '../Style/SearchPage.css'
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import Categorys from '../Component/Categorys';
 
-function SearchPage() {
+function Category() {
     const [product, setProduct] = useState([]);
     const [limit, setLimit] = useState(12);
     const [currentPage, setCurrentPage] = useState(1);
-    let { search } = useParams();
-    // console.log(search);
+    let { categorys } = useParams();
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`https://dummyjson.com/products/search?q=${search}`);
+                const response = await axios.get(`https://dummyjson.com/products/category/${categorys}`);
                 setProduct(response.data.products);
                 console.log(response.data.products);
             } catch (error) {
@@ -27,7 +26,7 @@ function SearchPage() {
         }
 
         fetchData();
-    }, [search, currentPage, limit]);
+    }, [categorys, currentPage, limit]);
     const ChangeNextPage = (page) => {
         window.history.pushState(null, null, `${page + 1} `);
         setCurrentPage(page + 1);
@@ -44,7 +43,6 @@ function SearchPage() {
     };
     return (
         <div>
-            {/* <Header /> */}
             <Container>
                 <Row>
                     <Col lg={4} md={5} sm={6} xs={12} className=' order-md-0 order-3 d-flex justify-content-md-start justify-content-center'>
@@ -65,6 +63,7 @@ function SearchPage() {
                     </Col>
                 </Row>
             </Container>
+            <Categorys />
             <Container>
                 <Row>
                     {product.map((e, i) => {
@@ -78,6 +77,7 @@ function SearchPage() {
                                             <Card.Text className='text-center'>Price:-{e.price}</Card.Text>
                                             <div className='d-flex justify-content-center'>
                                                 <Button className='productlist-btn'><Link to={`/Product/${e.id} `} className='link1'>More</Link></Button>
+                                                {/* <Button></Button> */}
                                             </div>
 
                                         </Card.Body>
@@ -98,4 +98,4 @@ function SearchPage() {
     )
 }
 
-export default SearchPage
+export default Category
