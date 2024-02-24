@@ -1,7 +1,8 @@
 // import { Dropdown } from 'booststrap/dist/js/bootstrap.bundle'
 import React from 'react'
-import { Button, Col, Row, Dropdown } from 'react-bootstrap'
+import { Col, Row, Dropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import "../Style/Categorys.css"
 
 function Categorys() {
     return (
@@ -10,7 +11,7 @@ function Categorys() {
                 <Col>
                     <div className='d-flex justify-content-center mt-2'>
                         <Dropdown>
-                            <Dropdown.Toggle id="dropdown-basic">
+                            <Dropdown.Toggle variant="pagination-btn" className='pagination-btn2' id="dropdown-basic">
                                 Digital Gegets
                             </Dropdown.Toggle>
 
@@ -25,7 +26,7 @@ function Categorys() {
                 <Col>
                     <div className='d-flex justify-content-center mt-2'>
                         <Dropdown>
-                            <Dropdown.Toggle id="dropdown-basic">
+                            <Dropdown.Toggle variant="pagination-btn" className='pagination-btn2' id="dropdown-basic">
                                 Mens Wear
                             </Dropdown.Toggle>
 
@@ -41,7 +42,7 @@ function Categorys() {
                 <Col>
                     <div className='d-flex justify-content-center mt-2' >
                         <Dropdown>
-                            <Dropdown.Toggle id="dropdown-basic">
+                            <Dropdown.Toggle variant="pagination-btn" className='pagination-btn2' id="dropdown-basic">
                                 Women Wear
                             </Dropdown.Toggle>
 
@@ -59,8 +60,8 @@ function Categorys() {
                 <Col>
 
                     <div className='d-flex justify-content-center mt-2'>
-                        <Dropdown>
-                            <Dropdown.Toggle id="dropdown-basic">
+                        <Dropdown >
+                            <Dropdown.Toggle variant="pagination-btn" className='pagination-btn2' button id="dropdown-basic">
                                 furniture
                             </Dropdown.Toggle>
 
@@ -77,32 +78,27 @@ function Categorys() {
                 </Col>
                 <Col>
                     <div className='d-flex justify-content-center mt-2'>
-                        <Button> <Link className='a1' to={'/category/tops'}>tops</Link></Button>
+                        <button className='pagination-btn'> <Link className='a1' to={'/category/tops'}>tops</Link></button>
                     </div>
                 </Col>
                 <Col>
                     <div className='d-flex justify-content-center mt-2'>
-                        <Button><Link className='a1' to={'/category/sunglasses'}>sunglasses</Link></Button>
+                        <button className='pagination-btn'><Link className='a1' to={'/category/sunglasses'}>sunglasses</Link></button>
                     </div>
                 </Col>
                 <Col>
                     <div className='d-flex justify-content-center mt-2'>
-                        <Button><Link className='a1' to={'/category/automotive'}>automotive</Link></Button>
+                        <button className='pagination-btn'><Link className='a1' to={'/category/automotive'}>automotive</Link></button>
                     </div>
                 </Col>
                 <Col>
                     <div className='d-flex justify-content-center mt-2'>
-                        <Button><Link className='a1' to={'/category/motorcycle'}>motorcycle</Link></Button>
+                        <button className='pagination-btn'><Link className='a1' to={'/category/motorcycle'}>motorcycle</Link></button>
                     </div>
                 </Col>
                 <Col>
                     <div className='d-flex justify-content-center mt-2'>
-                        <Button><Link className='a1' to={'/category/skincare'}>skincare</Link></Button>
-                    </div>
-                </Col>
-                <Col>
-                    <div className='d-flex justify-content-center mt-2'>
-                        <Button><Link className='a1' to={'/category/groceries'}>groceries</Link></Button>
+                        <button className='pagination-btn'><Link className='a1' to={'/category/skincare'}>skincare</Link></button>
                     </div>
                 </Col>
             </Row>
